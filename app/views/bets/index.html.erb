@@ -1,21 +1,13 @@
-<h1>Bets</h1>
+<h1>Top Bets</h1>
 
 <div class="bets-container">
-    <% @bets.each do |bet| %>
-      <div>
-        <li><%= link_to bet.name, bet_path(bet) %></li>
-    <% end %>
+  <% @bets.each do |bet| %>
+    <div class="bet-card">
+      <%= render "bet_card", bet: bet %>
     </div>
+    <div class="card-space"></div>
+  <% end %>
 </div>
 
 
 <%= link_to "Create new bet", new_bet_path, class: "btn btn-gradient" %>
-
-
-<div class="bets-container">
-    <% @bets.each do |bet| %>
-      <div>
-        <li><%= link_to bet.name, bet_path(bet) %></li>
-    <% end %>
-    </div>
-</div>

@@ -1,5 +1,7 @@
 class Bet < ApplicationRecord
   belongs_to :tag
+  has_many :bet_members
+  has_many :users, through: :bet_members
 
   validates :name, presence: true
   validates :stake, presence: true
