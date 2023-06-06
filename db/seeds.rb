@@ -14,11 +14,11 @@ user_1.save!
 user_2 = User.new(email: "dennis@fake.com", password: "123123")
 user_2.save!
 
-tag_1 = Tag.new(name: "Sports")
+tag_1 = Tag.new(name: "sport")
 tag_1.save!
-tag_2 = Tag.new(name: "E-sports")
+tag_2 = Tag.new(name: "gaming")
 tag_2.save!
-tag_3 = Tag.new(name: "Board Game")
+tag_3 = Tag.new(name: "challenges")
 tag_3.save!
 
 puts "Creating bets..."
