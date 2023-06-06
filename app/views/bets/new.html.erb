@@ -1,0 +1,13 @@
+<div class="container d-flex justify-content-center vh-50 mt-4 ">
+  <%= simple_form_for(@bet) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :stake %>
+    <%= f.input :location %>
+    <%= f.input :end_time %>
+    <%= f.input :privacy %>
+    <%= f.input :status %>
+    <%= f.input :tag_id %>
+    <%= f.input :outcome %>
+    <%= f.submit %>
+  <% end %>
+</div>

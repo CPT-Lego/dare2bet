@@ -14,17 +14,17 @@ user_1.save!
 user_2 = User.new(email: "dennis@fake.com", password: "123123")
 user_2.save!
 
-tag_1 = Tag.new(name: "Sports")
+tag_1 = Tag.new(name: "sport")
 tag_1.save!
-tag_2 = Tag.new(name: "E-sports")
+tag_2 = Tag.new(name: "gaming")
 tag_2.save!
-tag_3 = Tag.new(name: "Board Game")
+tag_3 = Tag.new(name: "challenge")
 tag_3.save!
 
 puts "Creating bets..."
-bet_1 = Bet.new(name: "Bet 1", location: "Paris", stake: "$45", end_time: "10-11-2023", status: "pending", outcome: "ongoing", tag: tag_1)
+bet_1 = Bet.new(name: "Bet 1", location: "Paris", stake: "$45", end_time: "10-11-2023", status: "pending", outcome: "ongoing", tag: tag_1, privacy: "public")
 bet_1.save!
-bet_2 = Bet.new(name: "Bet 2", location: "Lisbon", stake: "$25", end_time: "10-12-2023", status: "pending", outcome: "ongoing", tag: tag_2)
+bet_2 = Bet.new(name: "Bet 2", location: "Lisbon", stake: "$25", end_time: "10-12-2023", status: "pending", outcome: "ongoing", tag: tag_2, privacy: "public")
 bet_2.save!
-bet_3 = Bet.new(name: "Bet 3", location: "London", stake: "$35", end_time: "10-13-2023", status: "pending", outcome: "ongoing", tag: tag_3)
+bet_3 = Bet.new(name: "Bet 3", location: "London", stake: "$35", end_time: "10-13-2023", status: "pending", outcome: "ongoing", tag: tag_3, privacy: "public")
 bet_3.save!

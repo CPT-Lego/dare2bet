@@ -3,6 +3,10 @@ Bets
 
 <ul>
   <% @bets.each do |bet| %>
-    <li><%= bet.name %></li>
+
+    <li><%= link_to bet.name, bet_path(bet) %></li>
   <% end %>
 </ul>
+
+    <%= link_to "Create new bet", new_bet_path, class: "btn btn-gradient" %>
+
