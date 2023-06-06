@@ -7,4 +7,12 @@
 
 
 
+
+
+ 
+          <%= link_to "Delete Bet", bet_path(@bet), class: "m-3 btn btn-dark m-2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <% end %>
+          <hr>
+
 <%= link_to "Delete Bet", bet_path(@bet), class: "m-3 btn btn-dark m-2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
