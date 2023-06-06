@@ -15,7 +15,8 @@ class BetsController < ApplicationController
   def create
     @bet = Bet.new(bet_params)
     @bet.save
-    redirect_to bet_path(@bet)
+
+    redirect_to bets_path(@bet)
   end
 
 
@@ -28,12 +29,7 @@ class BetsController < ApplicationController
     private
 
   def bet_params
-    params.require(:bet).permit(:stake, :location, :end_time, :privacy, :status, :tag_id, :outcome)
+    params.require(:bet).permit(:name, :stake, :location, :end_time, :privacy, :status, :tag_id, :outcome)
   end
 
-
-
-
 end
-
-

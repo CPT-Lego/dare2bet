@@ -3,11 +3,11 @@
     <%= f.input :name %>
     <%= f.input :stake %>
     <%= f.input :location %>
-    <%= f.input :end_time %>
-    <%= f.input :privacy %>
-    <%= f.input :status %>
-    <%= f.input :tag_id %>
-    <%= f.input :outcome %>
+    <%= f.input :end_time, html5: true %>
+    <%= f.input :privacy, collection: ["public", "private"], selected: "private" %>
+    <%= f.input :status, collection: ["pending", "active", "finished"], selected: "pending" %>
+    <%= f.association :tag %>
+    <%= f.input :outcome, collection: ["ongoing", "win", "loss", "tie"], selected: "ongoing"%>
     <%= f.submit %>
   <% end %>
 </div>
