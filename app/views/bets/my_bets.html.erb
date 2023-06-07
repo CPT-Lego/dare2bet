@@ -1,0 +1,12 @@
+
+
+<h1>My Bets</h1>
+
+<% @bets.each do |bet| %>
+  <div>
+    <h2><%= bet.name %></h2>
+    <p>Stake: <%= bet.stake %></p>
+    <p>Location: <%= bet.location %></p>
+
+  </div>
+<% end %>

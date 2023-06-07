@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :bets
 
+  get "my_bets", to: "bets#my_bets"
+
 end
