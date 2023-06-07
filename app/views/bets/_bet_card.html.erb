@@ -19,6 +19,7 @@
      </div>
      <div class="vs" style="text-align: center">
       <p>VS.</p>
+
       </div>
       <div style="text-align: center">
       <p>02:04:53:01<p>
@@ -45,7 +46,9 @@
         <p class="card-text">Comments field goes here.</p>
       </div>
       <div class="column column-10">
-        <p>H</p>
+        <%= link_to bet_path(bet) do %>
+    <p>H</p>
+  <% end %>
       </div>
     </div>
   </div>

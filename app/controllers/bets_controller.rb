@@ -13,9 +13,12 @@ class BetsController < ApplicationController
 
   def create
     @bet = Bet.new(bet_params)
-    @bet.save
-    BetMember.create(bet: @bet, user: current_user)
-    redirect_to bets_path(@bet)
+    if @bet.save
+      BetMember.create(bet: @bet, user: current_user)
+      redirect_to bets_path(@bet)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
