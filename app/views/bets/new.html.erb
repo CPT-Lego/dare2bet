@@ -1,4 +1,5 @@
-<%= render "shared/navbar" %>
+ <%= render "shared/navbar" %>
+ <%= render "shared/footer" %>
 <div class="container d-flex justify-content-center vh-50 mt-4 ">
   <%= simple_form_for(@bet) do |f| %>
     <%= f.input :name %>
@@ -6,9 +7,7 @@
     <%= f.input :location %>
     <%= f.input :end_time, html5: true %>
     <%= f.input :privacy, collection: ["public", "private"], selected: "private" %>
-    <%= f.input :status, collection: ["pending", "active", "finished"], selected: "pending" %>
     <%= f.association :tag %>
-    <%= f.input :outcome, collection: ["ongoing", "win", "loss", "tie"], selected: "ongoing"%>
-    <%= f.submit %>
+    <%= f.submit  class: "btn btn-dark btn-block" %>
   <% end %>
 </div>
