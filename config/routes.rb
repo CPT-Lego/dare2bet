@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   get 'users/:id', to: "users#show", as: 'user'
 
+  get "my_bets", to: "bets#my_bets"
+  
 end

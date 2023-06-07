@@ -15,7 +15,7 @@ class BetsController < ApplicationController
   def create
     @bet = Bet.new(bet_params)
     @bet.save
-
+    BetMember.create(bet: @bet, user: current_user)
     redirect_to bets_path(@bet)
   end
 
@@ -26,7 +26,12 @@ class BetsController < ApplicationController
     redirect_to bets_path(@bet), notice: "Bet was successfully cancelled."
   end
 
-    private
+  def my_bets
+    @bets = current_user.bets
+    #@bets = Bet.where(user_id: current_user.id)
+  end
+
+  private
 
   def bet_params
     params.require(:bet).permit(:name, :stake, :location, :end_time, :privacy, :status, :tag_id, :outcome)
