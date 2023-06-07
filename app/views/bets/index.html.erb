@@ -1,11 +1,21 @@
+
  <%= render "shared/navbar" %>
  <%= render "shared/footer" %>
 
-<ul>
+<h1>Top Bets</h1>
+
+<div class="bets-container">
   <% @bets.each do |bet| %>
-
-    <li><%= link_to bet.name, bet_path(bet) %></li>
+    <div class="bet-card">
+      <%= render "bet_card", bet: bet %>
+    </div>
+    <div class="card-space"></div>
   <% end %>
-</ul>
+</div>
 
-    <%= link_to "Create new bet", new_bet_path, class: "btn btn-gradient" %>
+
+<%= link_to "Create new bet", new_bet_path, class: "btn btn-gradient" %>
+
+
+<%= link_to "My bets", my_bets_path, class: "btn btn-outline-dark m-2 btn-rounded ms-4" %>
+

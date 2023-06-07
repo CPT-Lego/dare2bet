@@ -5,4 +5,8 @@ Rails.application.routes.draw do
 
   resources :bets
 
+  get 'users/:id', to: "users#show", as: 'user'
+
+  get "my_bets", to: "bets#my_bets"
+  
 end
