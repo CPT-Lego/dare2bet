@@ -1,5 +1,4 @@
-Bets
-
+ <%= render "shared/navbar" %>
 
 <ul>
   <% @bets.each do |bet| %>
@@ -8,5 +7,6 @@ Bets
   <% end %>
 </ul>
 
-<%= link_to "Create new bet", new_bet_path, class: "btn btn-primary" %>
+
+<%= link_to "Create new bet", new_bet_path, class: "btn btn-gradient" %>
 <%= link_to "My bets", my_bets_path, class: "btn btn-outline-dark m-2 btn-rounded ms-4" %>
