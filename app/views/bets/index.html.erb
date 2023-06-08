@@ -1,10 +1,10 @@
 
  <%= render "shared/navbar" %>
- <%= render "shared/footer" %>
+
 
 <h1>Top Bets</h1>
 
-<div class="bets-container">
+<div class="bets-container pb-5">
   <% @bets.each do |bet| %>
     <div class="bet-card">
       <%= render "bet_card", bet: bet %>
@@ -12,3 +12,7 @@
     <div class="card-space"></div>
   <% end %>
 </div>
+
+<footer class="footer">
+  <%= render "shared/footer" %>
+</footer>

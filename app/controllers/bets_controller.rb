@@ -5,7 +5,7 @@ class BetsController < ApplicationController
 
   def show
     @bet = Bet.find(params[:id])
-    raise
+  
   end
 
   def new
@@ -59,7 +59,7 @@ class BetsController < ApplicationController
     else
       redirect_to bets_path, notice: "Bet was successfully cancelled."
     end
-  
+
   end
 
   def my_bets
