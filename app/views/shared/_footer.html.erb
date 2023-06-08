@@ -5,17 +5,19 @@
   </div>
  %>
 
- <p class="container" div align="center" class="i">
-<div class="footer footer--icons">
-    <%= link_to bets_path, class: "text-decoration-none text-white" do %>
-    <i class="fa-solid fa-medal" style="color: #e7af13;"></i>
-    <% end %>
-    <i class="fa-solid fa-location-dot" style="color: #e7af13;"></i>
-    <%= link_to new_bet_path, class: "text-decoration-none text-white" do %>
-    <i class="fa-solid fa-circle-plus" id="circle"></i>
-    <% end %>
-    <%= link_to my_bets_path, class: "text-decoration-none text-white" do %>
-    <i class="fa-solid fa-list" style="color: #e7af13;"></i>
-    <% end %>
-    <i class="fa-solid fa-gear" style="color: #e7af13;"></i>
-</div>
+ <div class="container text-center">
+    <div class="footer footer--icons">
+        <%= link_to bets_path, class: "text-decoration-none text-white" do %>
+        <i class="fa-solid fa-medal"></i>
+        <% end %>
+        <i class="fa-solid fa-location-dot"></i>
+        <%= link_to new_bet_path, class: "text-decoration-none text-white" do %>
+        <i class="fa-solid fa-circle-plus" id="circle"></i>
+        <% end %>
+        <%= link_to my_bets_path, class: "text-decoration-none text-white" do %>
+        <i class="fa-solid fa-list"></i>
+        <% end %>
+        <i class="fa-solid fa-gear"></i>
+    </div>
+  </div>
+
