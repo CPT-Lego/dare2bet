@@ -24,7 +24,12 @@ class BetsController < ApplicationController
   def destroy
     @bet = Bet.find(params[:id])
     @bet.destroy
-    redirect_to bets_path(@bet), notice: "Bet was successfully cancelled."
+    if request.referrer == my_bets_url
+      redirect_to my_bets_path, notice: "Bet was successfully cancelled."
+    else
+      redirect_to bets_path, notice: "Bet was successfully cancelled."
+    end
+  
   end
 
   def my_bets
