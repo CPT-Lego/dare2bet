@@ -1,8 +1,9 @@
- <%= render "shared/navbar" %>
  <%= render "shared/footer" %>
+
 <div class="container d-flex justify-content-center vh-50 mt-4 ">
   <%= simple_form_for(@bet) do |f| %>
     <%= f.input :name %>
+    <%= f.association :users, include_blank: false, include_hidden: false %>
     <%= f.input :stake %>
     <%= f.input :location %>
     <%= f.input :end_time, html5: true %>
