@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="banner">
+  <div class="container">
+    <h1>Welcome to <strong>Dare2Bet!</strong></h1>
+    <p>Challenge your friends. Make your bets public. No more empty bets!</p>
+    <%= link_to "Join the fun!", "/users/sign_in/", class: "btn btn-success" %>
+    <%= link_to "Let's see some Bets first", "#", class: "btn btn-flat" %>
+  </div>
+</div>
+<hr id="bottom">
+
+<div class="row">
+  <% Bet.all.each do |bet| %>
+    <div class="col">
+    <%= render "bets/bet_card", bet: bet %>
+    </div>
+  <% end %>
+</div>

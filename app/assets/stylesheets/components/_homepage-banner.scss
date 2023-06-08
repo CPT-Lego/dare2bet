@@ -1,0 +1,65 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  background-color: rgb(128, 46, 190);
+  align-items: center;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 35%;
+}
+
+.btn-flat:hover {
+  background: #4D04C4;
+  color: white;
+}
+
+.btn-success {
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  text-decoration: wavy;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 35%;
+}
+
+.btn-success:hover {
+  background: #02492f;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 35vh;
+  text-align: center;
+}
+

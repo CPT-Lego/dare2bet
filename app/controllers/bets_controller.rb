@@ -3,7 +3,6 @@ class BetsController < ApplicationController
     @bets = Bet.all
   end
 
-
   def show
     @bet = Bet.find(params[:id])
   end
@@ -21,8 +20,6 @@ class BetsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  
 
   def destroy
     @bet = Bet.find(params[:id])
