@@ -7,9 +7,9 @@
 <div class="container" >
   <div class="bet-card">
     <%= render "bet_card", bet: @bet %>
-    <h2><%= @bet.name %></h2>
-    <p><%= @bet.stake %></p>
-    <p><%= @bet.privacy %></p>
-  </div>
+    <p> Bet's name : <%= @bet.name %></p>
+    <p>Bet's stake : <%= @bet.stake %></p>
+    <p>Bet's privacy : <%= @bet.privacy %></p>
   <%= link_to "Delete Bet", bet_path(@bet), class: "m-3 btn btn-dark m-2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
 </div>
