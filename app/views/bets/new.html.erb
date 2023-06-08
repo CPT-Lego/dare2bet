@@ -1,6 +1,6 @@
  <%= render "shared/footer" %>
 
-<div class="container d-flex justify-content-center vh-50 mt-4 ">
+<div class="container d-flex justify-content-center vh-50 mt-5 ">
   <%= simple_form_for(@bet) do |f| %>
     <%= f.input :name %>
     <%= f.association :users, include_blank: false, include_hidden: false %>
@@ -12,3 +12,4 @@
     <%= f.submit  class: "btn btn-dark btn-block" %>
   <% end %>
 </div>
+

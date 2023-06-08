@@ -7,9 +7,9 @@
 
 <h2>Active Bets</h2>
 
-<div class="container text-center">
+<div class="bets-container text-center">
   <% @bets.each do |bet| %>
-    <div class="border my_bets">
+    <div class="border bet-card">
       <h2><%= bet.name %></h2>
       <p>Stake: <%= bet.stake %></p>
       <p>Location: <%= bet.location %></p>
