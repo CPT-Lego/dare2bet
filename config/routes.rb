@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root to: "bets#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  resources :bets
+  resources :bets do
+    get "resolve", to: "bets#resolve"
+    patch "set_result", to: "bets#set_result"
+  end
 
   get 'users/:id', to: "users#show", as: 'user'
 

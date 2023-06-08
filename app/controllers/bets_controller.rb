@@ -5,10 +5,40 @@ class BetsController < ApplicationController
 
   def show
     @bet = Bet.find(params[:id])
+    raise
   end
 
   def new
     @bet = Bet.new
+  end
+
+  def edit
+  end
+
+  def resolve
+    @bet = Bet.find(params[:bet_id])
+    @bet_member = BetMember.find_by(bet: @bet, user: current_user)
+  end
+
+  def set_result
+    @bet = Bet.find(params[:bet_id])
+    @bet_member = BetMember.find_by(bet: @bet, user: current_user)
+    first_outcome = params[:bet_member][:outcome]
+    @bet_member.outcome = first_outcome
+    @bet_member.save
+    @other_bet_member = @bet.bet_members.where.not(user: current_user).first
+    case first_outcome
+    when "win"
+      @other_bet_member.outcome = "loss"
+    when "tie"
+      @other_bet_member.outcome = "tie"
+    when "loss"
+      @other_bet_member.outcome = "win"
+    end
+    @other_bet_member.save
+    @bet.status = "finished"
+    @bet.save
+    redirect_to bet_path(@bet)
   end
 
   def create

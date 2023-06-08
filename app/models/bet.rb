@@ -9,6 +9,6 @@ class Bet < ApplicationRecord
   validates :location, presence: true
   validates :privacy, presence: true
   validates :status, inclusion: %w[pending active finished]
-  validates :outcome, inclusion: %w[ongoing win loss tie]
+  
 
 end
