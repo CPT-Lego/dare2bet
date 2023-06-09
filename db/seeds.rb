@@ -29,17 +29,17 @@ tag_3 = Tag.new(name: "challenge")
 tag_3.save!
 
 puts "Creating bets..."
-bet_1 = Bet.new(name: "Bet 1", location: "Paris", stake: "$45", end_time: "10-11-2023", status: "pending", outcome: "ongoing", tag: tag_1, privacy: "public")
+bet_1 = Bet.new(name: "Bet 1", location: "Paris", stake: "$45", end_time: "10-11-2023", status: "pending", tag: tag_1, privacy: "public")
 bet_1.save!
-BetMember.create!(bet: bet_1, user: user_1)
-BetMember.create!(bet: bet_1, user: user_2)
+BetMember.create!(bet: bet_1, user: user_1, outcome: "undecided")
+BetMember.create!(bet: bet_1, user: user_2, outcome: "undecided")
 
-bet_2 = Bet.new(name: "Bet 2", location: "Lisbon", stake: "$25", end_time: "10-12-2023", status: "pending", outcome: "ongoing", tag: tag_2, privacy: "public")
+bet_2 = Bet.new(name: "Bet 2", location: "Lisbon", stake: "$25", end_time: "10-12-2023", status: "pending", tag: tag_2, privacy: "public")
 bet_2.save!
-BetMember.create!(bet: bet_2, user: user_3)
-BetMember.create!(bet: bet_2, user: user_4)
+BetMember.create!(bet: bet_2, user: user_3, outcome: "undecided")
+BetMember.create!(bet: bet_2, user: user_4, outcome: "undecided")
 
-bet_3 = Bet.new(name: "Bet 3", location: "London", stake: "$35", end_time: "10-13-2023", status: "pending", outcome: "ongoing", tag: tag_3, privacy: "public")
+bet_3 = Bet.new(name: "Bet 3", location: "London", stake: "$35", end_time: "10-13-2023", status: "pending", tag: tag_3, privacy: "public")
 bet_3.save!
-BetMember.create!(bet: bet_3, user: user_4)
-BetMember.create!(bet: bet_3, user: user_5)
+BetMember.create!(bet: bet_3, user: user_4, outcome: "undecided")
+BetMember.create!(bet: bet_3, user: user_5, outcome: "undecided")
