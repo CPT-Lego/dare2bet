@@ -1,17 +1,21 @@
-<%= render "shared/footer" %>
 <%= render "shared/navbar" %>
-
-<h1>My Bets</h1>
-
-<h2>Active Bets</h2>
-
-<div class="bets-container text-center">
-  <% @bets.each do |bet| %>
-    <div class="bet-card border my_bets">
-       <%= render "bet_card", bet: bet %>
-    </div>
-    <div class="card-space"></div>
-  <% end %>
+<div class="bets-container text-center mt-2">
+    <div class="d-flex flex-column align-items-center">
+      <h2 class="custom-bg-primary text-white p-3 m-2 mx-auto">My Bets</h1>
+      <h2 class="custom-bg-info text-white p-3 m-2 mx-auto">Active Bets</h2>
+    </div >
+   <% @bets.each do |bet| %>
+      <div class="mt-3" >
+        <%= render "bet_card", bet: bet %>
+      </div>
+    <% end %>
+ <div class="mt-3 mb-2">
+    <h2 class="custom-bg-info text-white p-3 mx-auto">Past Bets</h2>
+  </div>
 </div>
 
-<h3>Past Bets</h3>
+
+
+<footer class="footer">
+  <%= render "shared/footer" %>
+</footer>

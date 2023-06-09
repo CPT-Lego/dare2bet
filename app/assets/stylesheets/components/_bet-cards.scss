@@ -3,16 +3,20 @@
   justify-content: center;
   align-items: center;
   height: 60vh;
+
 }
 
 .card-space {
   margin-bottom: 20px;
+  background-color:black;
 }
 
 .card-body {
   display: grid;
   grid-template-columns: 85% 15%;
   grid-gap: 10px;
+  background-color:wheat;
+
 }
 
 .column-90 {
@@ -23,4 +27,7 @@
   width: 10%;
 }
 
+.card-top {
 
+  background-color:antiquewhite;
+}

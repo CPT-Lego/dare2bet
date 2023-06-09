@@ -21,11 +21,11 @@ user_4.save!
 user_5 = User.new(email: "riri@fake.com", password: "123123", name: "Rihanna")
 user_5.save!
 
-tag_1 = Tag.new(name: "sport")
+tag_1 = Tag.new(name: "Sport")
 tag_1.save!
-tag_2 = Tag.new(name: "gaming")
+tag_2 = Tag.new(name: "Gaming")
 tag_2.save!
-tag_3 = Tag.new(name: "challenge")
+tag_3 = Tag.new(name: "Challenge")
 tag_3.save!
 
 puts "Creating bets..."
