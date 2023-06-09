@@ -1,6 +1,6 @@
 class Tag < ApplicationRecord
 
-  validates :name, inclusion: %w[GAMING SPORT CHALLENGE FACT-CHECK CHANCE OTHER]
+  validates :name, inclusion: %w[Gaming Sport Challenge Fact-check Chance Other]
 
 
 end
