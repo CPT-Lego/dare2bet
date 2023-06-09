@@ -13,7 +13,13 @@
     <p><strong>Bet's privacy : </strong><%= @bet.privacy %></p>
     <p><strong>Bet's status : </strong><%= @bet.status %></p>
     <p><strong>Created at :</strong> <%= @bet.created_at %></p>
-        <p><strong>End at :</strong> <%= @bet.end_time %></p>
+    <p><strong>End at :</strong> <%= @bet.end_time %></p>
+     <% current_user_bet_member = @bet.bet_members.find_by(user_id: current_user.id) %>
+    <% if current_user_bet_member %>
+      <p><strong>Outcome: </strong><%= current_user_bet_member.outcome %></p>
+    <% end %>
+
+
   </div>
   <div class="d-flex justify-content-center" >
    <%= link_to "Resolve", bet_resolve_path(@bet), class: "  mt-2 me-2 btn btn-outline-success btn-equal-width" %>
