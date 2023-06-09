@@ -7,12 +7,12 @@
 <div class="container d-flex align-items-center justify-content-center text-center mt-2">
   <div class="bet-card">
     <%= render "bet_card", bet: @bet %>
-    <p> Bet's name : <%= @bet.name %></p>
+    <p > Bet's name : <%= @bet.name %></p>
     <p>Bet's stake : <%= @bet.stake %></p>
     <p>Bet's privacy : <%= @bet.privacy %></p>
   </div>
-  <div class="bet-card" >
-   <%= link_to "Resolve", bet_resolve_path(@bet), class: "border m-3 btn btn-primary" %>
-   <%= link_to "Delete Bet", bet_path(@bet), class: "border m-3 btn btn-dark m-2", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <div class="d-flex justify-content-center" >
+   <%= link_to "Resolve", bet_resolve_path(@bet), class: "  mt-2 me-2 btn btn-outline-success btn-equal-width" %>
+   <%= link_to "Delete Bet", bet_path(@bet), class: "  mt-2 ms-2 btn btn-outline-danger btn-equal-width", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
 </div>

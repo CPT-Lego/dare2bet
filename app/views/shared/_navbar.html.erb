@@ -12,13 +12,14 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-          <%= link_to "Log out", new_user_session_path, class: "nav-link", data: {turbo_method: :delete} %>
+          <%= link_to "Log out", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete} %>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer"/>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 
               <%= link_to "Log out", new_user_session_path, class: "nav-link", data: {turbo_method: :delete} %>
+
 
             </div>
           </li>
