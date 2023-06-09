@@ -1,20 +1,25 @@
-
-<div class="banner">
-  <div class="container text-center">
-    <h1>Welcome to <strong>Dare2Bet!</strong></h1>
-    <p>Challenge your friends. Make your bets public. No more empty bets!</p>
-    <div class="homepage-buttons text-center">
-    <%= link_to "Join the fun!", "/users/sign_in/", class: "btn btn-success" %>
-    <%= link_to "Let's see some Bets first", "#", class: "btn btn-flat" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.gobankingrates.com/wp-content/uploads/2019/01/Friends-cheering-American-football-together-shutterstock_1072463246.jpg?webp=1);">
+  <div class="container">
+    <div class="mx-auto">
+      <h1>Welcome to <strong>Dare2Bet!</strong></h1>
+      <p>Challenge your friends <i class="fa-regular fa-handshake"></i></p>
+      <p>Make your bets public <i class="fa-solid fa-users-between-lines"></i></p>
+      <p>No more empty bets! <i class="fa-solid fa-ghost"></i></p>
     </div>
   </div>
 </div>
+<div class="homepage-buttons text-center">
+  <%= link_to "Let's see some Bets first", "#", class: "btn btn-flat see-bets-btn" %>
+  <%= link_to "Join the fun!", "/users/sign_in/", class: "btn btn-success join-fun-btn" %>
+</div>
 <hr id="bottom">
 
-<div class="row">
-  <% Bet.all.each do |bet| %>
-    <div class="col">
-    <%= render "bets/bet_card", bet: bet %>
-    </div>
-  <% end %>
+<div class="center-content">
+  <div class="row">
+    <% Bet.all.each do |bet| %>
+      <div class="col">
+      <%= render "bets/bet_card", bet: bet %>
+      </div>
+    <% end %>
+  </div>
 </div>
