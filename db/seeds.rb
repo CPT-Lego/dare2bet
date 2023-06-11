@@ -10,15 +10,15 @@ Bet.destroy_all
 User.destroy_all
 
 puts "Creating users..."
-user_1 = User.new(email: "chris@fake.com", password: "123123", name: "Chris")
+user_1 = User.new(email: "chris@fake.com", password: "123123", name: "Chris", location: "Athens, Greece")
 user_1.save!
-user_2 = User.new(email: "dennis@fake.com", password: "123123", name: "Dennis")
+user_2 = User.new(email: "dennis@fake.com", password: "123123", name: "Dennis", location: "Denver, Colorado, USA")
 user_2.save!
-user_3 = User.new(email: "mateo@fake.com", password: "123123", name: "Mateo")
+user_3 = User.new(email: "mateo@fake.com", password: "123123", name: "Mateo", location: "Paris, France")
 user_3.save!
-user_4 = User.new(email: "david@fake.com", password: "123123", name: "David")
+user_4 = User.new(email: "david@fake.com", password: "123123", name: "David", location: "Lisbon, Portugal")
 user_4.save!
-user_5 = User.new(email: "riri@fake.com", password: "123123", name: "Rihanna")
+user_5 = User.new(email: "riri@fake.com", password: "123123", name: "Rihanna", location: "Bridgetown, Barbados")
 user_5.save!
 
 tag_1 = Tag.new(name: "Sport")

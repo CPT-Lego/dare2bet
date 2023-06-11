@@ -1,11 +1,16 @@
 class BetsController < ApplicationController
   def index
     @bets = Bet.all
+    @markers = @bets.geocoded.map do |bet|
+      {
+        lat: bet.latitude,
+        lng: bet.longitude
+      }
+    end
   end
 
   def show
     @bet = Bet.find(params[:id])
-
   end
 
   def new

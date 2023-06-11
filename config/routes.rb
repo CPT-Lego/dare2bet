@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   get "home", to: "pages#home"
 
+  get "around_me", to: "bets#around_me"
+
 end
