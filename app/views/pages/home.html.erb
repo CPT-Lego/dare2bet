@@ -9,9 +9,8 @@
   </div>
 </div>
 <div class="homepage-buttons text-center">
-  <%= link_to "Let's see some Bets first", "#", class: "btn btn-flat see-bets-btn", id: "scroll-link" %>
-  <%# <%= javascript_include_tag 'scroll' %> 
-  <%= link_to "Join the fun!", "/users/sign_in/", class: "btn btn-success join-fun-btn" %>
+  <%= link_to "Let's see some Bets first", "#homepage-cards", class: "btn btn-flat see-bets-btn", id: "scroll-link" %>
+  <%= link_to "Join the fun!", new_user_session_path, class: "btn btn-success join-fun-btn" %>
 </div>
 <hr id="bottom">
 
