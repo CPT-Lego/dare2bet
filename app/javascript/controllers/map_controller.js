@@ -19,7 +19,6 @@ export default class extends Controller {
       types: "country,region,place,address"
     });
     this.geocoder.on("result", event => this.#setInputValue(event));
-    this.geocoder.on("clear", () => this.#clearInputValue());
     this.geocoder.addTo(this.element);
     this.#addMarkersToMap();
   }
