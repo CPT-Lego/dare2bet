@@ -12,7 +12,8 @@ class BetsController < ApplicationController
     @markers = @bets.geocoded.map do |bet|
       {
         lat: bet.latitude,
-        lng: bet.longitude
+        lng: bet.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {bet: bet})
       }
     end
   end
