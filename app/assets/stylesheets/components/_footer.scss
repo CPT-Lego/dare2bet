@@ -1,11 +1,7 @@
-.page-container {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
-}
 
 .i {
-  margin: 50px;
+  margin: 70px;
+  color: #f5df4b;
 }
 
 .footer {
@@ -28,8 +24,8 @@
   /* justify-content: center; */
   justify-content: space-between;
   align-items: center;
-  font-size: 30px;
-  padding: 15px;
+  font-size: 25px;
+  padding: 45px;
 }
 
 .footer--icons > img {
@@ -37,6 +33,10 @@
 }
 
 #circle {
+  font-size: 65px;
+  margin-bottom: 27px;
+}
 
-  font-size: 60px;
+.color-item {
+  color :#f5df4b;
 }
