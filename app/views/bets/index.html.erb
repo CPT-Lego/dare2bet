@@ -1,6 +1,6 @@
-<h3 class="custom-bg-info text-white p-1 mx-auto mt-3 text-center">Top Bets</h3>
+<h2 class="custom-bg-info p-1 mx-auto mt-3 text-center"><strong>Top Bets</strong></h2>
 
-<div class="bets-container pb-5">
+<div class="footer-bottom-margin bets-container content pb-5">
   <% @bets.each do |bet| %>
     <div class="bet-card">
       <%= render "bet_card", bet: bet %>
