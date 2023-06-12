@@ -9,7 +9,6 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #670BFF;
   transition: background 0.3s ease;
   display: flex;
   justify-content: center;
@@ -17,12 +16,7 @@
   height: 5vh;
   width: 50%;
   font-size: medium;
-  margin-bottom: 20px;
-}
-
-.btn-flat:hover {
-  background: #4D04C4;
-  color: white;
+  text-decoration: underline;
 }
 
 .btn-outline-light {
@@ -34,9 +28,11 @@
   height: 5vh;
   width: 100%;
   margin-bottom: 20px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-outline-light:hover {
-  background: #02492f;
+  background-color: rbga(255, 255, 255, 0.2);
   color: white;
 }
