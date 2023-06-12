@@ -1,24 +1,23 @@
-
+<%#
 
 <div class="single-bet-card-row" style="margin-bottom: 100px;">
   <div class="card" style="width: 18rem;">
   <div class="card" style="width: 18rem;">
 
-    <div class="card-top">
+    <div class="card-top" style="height: 120px">
      <div class="row">
       <div class="col-3">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
-      </div>
+      <%# </div>
       <div class="col-3">
         <div class="info">
-         <h1 style="font-size: 10px">Mateo</h1>
+         <h1 style="font-size: 15px, text-align:">Mateo</h1>
          <p>Paris</p>
         </div>
       </div>
      </div>
      <div class="row">
       <div class="col" style="text-align: left">
-        <p>840 votes</p>
       </div>
      </div>
      <div class="vs" style="text-align: center">
@@ -30,16 +29,16 @@
       <div style="text-align: center">
       <p>02:04:53:01<p>
       </div>
-     <div class="row justify-content-end" >
-      <div class="col-3">
+     <div class="row justify-content end %>
+     <%#  <div class="col-3">
         <div class="info" style="text-align: right">
-         <h1 style="font-size: 10px">Dennis</h1>
+         <h1 style="font-size: 15px">Dennis</h1>
          <p>Paris</p>
         </div>
       </div>
       <div class="col-3" style="float: right">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-bordered", alt: "avatar-bordered" %>
-      </div>
+      <%# </div>
      </div>
      <div class="row">
       <div class="col" style="text-align: right">
@@ -52,12 +51,12 @@
       </div>
       <div class="column column-10">
         <%= link_to bet_path(bet) do %>
-    <p><i class="fa-solid fa-heart" style="color: #e02d00;"></i></p>
+    <%# <p><i class="fa-solid fa-heart" style="color: #e02d00;"></i></p>
   <% end %>
-      </div>
+    <%#   </div>
     </div>
   </div>
-</div>
+</div> %>
 
       <%# DO NOT DELETE %>
       <%# <% if current_user.photo.attached? %>
@@ -65,3 +64,30 @@
       <%# else %>
         <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-bordered", alt: "avatar-bordered" %>
       <%# end %>
+
+
+
+
+<div class="container mt-3">
+  <div class="card border-0 position-relative">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-5 d-flex align-items-center gap-2">
+          <%= image_tag "pig.jpg", class: "avatar" %>
+          <p class="m-0">Mateo</p>
+        </div>
+        <div class="col-2 text-center align-self-center position-relative">
+          <i class="fa-solid fa-bolt fs-2"></i>
+          <p class="m-0 position-absolute bet-date">10pm - 21st May</p>
+        </div>
+        <div class="col-5 d-flex justify-content-end align-items-center gap-2">
+          <p class="m-0">Chris</p>
+          <%= image_tag "pig.jpg", class: "avatar" %>
+        </div>
+        <div class="bet-title">
+          <h4 class="m-0">Who drinks more?</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,33 +1,59 @@
-.bets-container {
+/* .bets-container {
   display: grid;
   justify-content: center;
   align-items: center;
   height: 60vh;
 
-}
+} */
 
-.card-space {
-  margin-bottom: 20px;
+/* .card-space {
+  margin-bottom: 10px;
   background-color:black;
-}
+} */
 
 .card-body {
   display: grid;
-  grid-template-columns: 85% 15%;
   grid-gap: 10px;
-  background-color:wheat;
-
+  background-color: #8C52ff;
+  border-radius: 20px;
+  color: white;
+  padding-bottom: 32px;
 }
 
-.column-90 {
+.bet-card {
+  margin-top: 40px;
+}
+
+.bet-title {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 241px;
+  background: white;
+  color: purple;
+  border-radius: 16px;
+  text-align: center;
+  padding: 10px 6px;
+}
+
+.bet-date {
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  width: 200px;
+}
+
+/* .column-90 {
   width: 90%;
-}
+} */
 
-.column-10 {
+/* .column-10 {
   width: 10%;
-}
+} */
 
-.card-top {
+/* .card-top {
 
   background-color:antiquewhite;
 }
+ */
