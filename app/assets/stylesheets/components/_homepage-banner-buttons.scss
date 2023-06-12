@@ -17,6 +17,7 @@
   height: 5vh;
   width: 50%;
   font-size: medium;
+  margin-bottom: 20px;
 }
 
 .btn-flat:hover {
@@ -24,17 +25,18 @@
   color: white;
 }
 
-.btn-success {
+.btn-outline-light {
   -webkit-text-fill-color: rgb(255, 255, 255);
   text-decoration: wavy;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 5vh;
-  width: 50%;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.btn-success:hover {
+.btn-outline-light:hover {
   background: #02492f;
   color: white;
 }
