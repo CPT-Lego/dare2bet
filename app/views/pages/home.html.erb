@@ -9,12 +9,12 @@
   </div>
 </div>
 <div class="homepage-buttons text-center">
-  <%= link_to "Let's see some Bets first", "#", class: "btn btn-flat see-bets-btn" %>
-  <%= link_to "Join the fun!", "/users/sign_in/", class: "btn btn-success join-fun-btn" %>
+  <%= link_to "Let's see some Bets first", "#homepage-cards", class: "btn btn-flat see-bets-btn", id: "scroll-link" %>
+  <%= link_to "Join the fun!", new_user_session_path, class: "btn btn-success join-fun-btn" %>
 </div>
 <hr id="bottom">
 
-<div class="center-content">
+<div class="center-content" id="homepage-cards">
   <div class="row">
     <% Bet.all.each do |bet| %>
       <div class="col">

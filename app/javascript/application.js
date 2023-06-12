@@ -2,3 +2,5 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+
