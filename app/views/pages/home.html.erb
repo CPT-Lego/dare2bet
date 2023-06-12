@@ -1,18 +1,17 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.gobankingrates.com/wp-content/uploads/2019/01/Friends-cheering-American-football-together-shutterstock_1072463246.jpg?webp=1);">
-  <div class="container">
-    <div class="mx-auto">
-      <h1>Welcome to <strong>Dare2Bet!</strong></h1>
-      <p>Challenge your friends <i class="fa-regular fa-handshake"></i></p>
-      <p>Make your bets public <i class="fa-solid fa-users-between-lines"></i></p>
-      <p>No more empty bets! <i class="fa-solid fa-ghost"></i></p>
+<div class="banner pt-5">
+  <%= image_tag "Dare2betpurple.gif" %>
+  <div class="container centered-banner-text">
+    <div class="ms-4 ps-5 my-auto">
+      <p class="banner-info d-flex gap-2 text-start"><i class="fa-regular fa-handshake" style="color: #f5d847;"></i><span>Challenge your friends</span></p>
+      <p class="banner-info d-flex gap-2 text-start"><i class="fa-solid fa-users-between-lines" style="color: #f5d847;"></i><span>Make your bets public</span></p>
+      <p class="banner-info d-flex gap-2 text-start"><i class="fa-solid fa-ghost" style="color: #f5d847;"></i><span>No more empty bets!</span></p>
     </div>
   </div>
+  <div class="homepage-buttons text-center">
+    <%= link_to "Let's see some Bets first", "#homepage-cards", class: "btn btn-flat see-bets-btn", id: "scroll-link" %>
+    <%= link_to "Join the fun!", new_user_session_path, class: "btn btn-success join-fun-btn" %>
+  </div>
 </div>
-<div class="homepage-buttons text-center">
-  <%= link_to "Let's see some Bets first", "#homepage-cards", class: "btn btn-flat see-bets-btn", id: "scroll-link" %>
-  <%= link_to "Join the fun!", new_user_session_path, class: "btn btn-success join-fun-btn" %>
-</div>
-<hr id="bottom">
 
 <div class="center-content" id="homepage-cards">
   <div class="row">
