@@ -1,10 +1,15 @@
-<div class="container d-flex justify-content-center vh-50 mt-5 ">
+<div class=" container d-flex justify-content-center vh-50 mt-5 mb-5 ">
   <%= simple_form_for(@bet) do |f| %>
+  <h2> Members </h2>
     <%= f.input :name %>
     <%= f.association :users, include_blank: false, include_hidden: false %>
+
+    <h2> Bet's info </h2>
     <%= f.input :stake %>
     <%= f.input :location %>
-    <%= f.input :end_time, html5: true %>
+     <%= f.input :end_time, html5: true %>
+
+    <h2> Bet's privacy </h2>
     <%= f.input :privacy, collection: ["public", "private"], selected: "private" %>
     <%= f.association :tag %>
     <%= f.submit  class: "btn btn-dark btn-block" %>
