@@ -1,5 +1,16 @@
+
 <div class="map-in-center"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+<hr>
+<div class="center-content" id="homepage-cards">
+  <div class="row">
+    <% Bet.all.each do |bet| %>
+      <div class="col">
+      <%= render "bets/bet_card", bet: bet %>
+      </div>
+    <% end %>
+  </div>
 </div>
