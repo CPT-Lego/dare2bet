@@ -1,4 +1,6 @@
 class Bet < ApplicationRecord
+  
+
   belongs_to :tag
 
   has_many :bet_members, dependent: :destroy
