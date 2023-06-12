@@ -1,8 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: wheat;
+  background-color: #8c50f7;
+  }
 
-}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -10,4 +10,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 75px;
+}
+
+.navbar {
+  min-height: 150px;
 }

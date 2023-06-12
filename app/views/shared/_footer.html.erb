@@ -1,26 +1,19 @@
-  <%# <div id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
-    <div class="container text-center">
-      <strong>Dare2Bet.com</strong>
-    </div>
-  </div>
- %>
-
- <div class="container text-center">
+<div class="container text-center p-3">
     <div class="footer footer--icons">
-        <%= link_to bets_path, class: "text-decoration-none text-white" do %>
+        <%= link_to bets_path, class: "text-decoration-none color-item" do %>
         <i class="fa-solid fa-medal"></i>
         <% end %>
-        <%= link_to around_me_path, class: "text-decoration-none text-white" do %>
-        <i class="fa-solid fa-location-dot"></i>
+        <%= link_to around_me_path, class: "text-decoration-none color-item" do %>
+        <i class="fa-solid fa-location-dot "></i>
         <% end %>
         <%= link_to new_bet_path, class: "text-decoration-none text-white" do %>
         <i class="fa-solid fa-circle-plus" id="circle"></i>
         <% end %>
-        <%= link_to my_bets_path, class: "text-decoration-none text-white" do %>
+        <%= link_to my_bets_path, class: "text-decoration-none color-item" do %>
         <i class="fa-solid fa-list"></i>
         <% end %>
-        <%= link_to profile_path, class: "text-decoration-none text-white" do %>
+        <%= link_to profile_path, class: "text-decoration-none color-item" do %>
           <i class="fa-solid fa-gear"></i>
         <% end %>
     </div>
-  </div>
+</div>

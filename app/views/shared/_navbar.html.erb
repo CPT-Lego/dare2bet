@@ -1,32 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "pigpurple.png", alt:"Dare Bet fancy logo", class:"navlogo"%>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
+
+    <%= link_to my_bets_path, class: "navbar-brand mx-auto" do %>
+      <%= image_tag "pigpurple.png", alt:"Dare Bet fancy logo", class:"navlogo",style: "transform: scale(2,2)" %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-          <%= link_to "Log out", destroy_user_session_path, class: "nav-link", data: {turbo_method: :delete} %>
-          </li>
-          <li class="nav-item dropdown">
-            <img class="avatar-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer"/>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
-              <%= link_to "Log out", new_user_session_path, class: "nav-link", data: {turbo_method: :delete} %>
-
-
-            </div>
-          </li>
-        <% else %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
 </div>
