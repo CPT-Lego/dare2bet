@@ -12,7 +12,8 @@
 } */
 
 .card-body {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-gap: 10px;
   background-color: #8C52ff;
   border-radius: 20px;
