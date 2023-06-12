@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root "pages#home"
+  get "profile", to: "pages#profile"
 
   resources :bets do
     get "resolve"
@@ -11,6 +12,4 @@ Rails.application.routes.draw do
 
   get "my_bets", to: "bets#my_bets"
   get "around_me", to: "bets#around_me"
-
-  get 'users/:id', to: "users#show", as: 'user'
 end

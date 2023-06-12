@@ -2,7 +2,7 @@
 
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-  <div class="form-inputs text-center d-flex align-items-center flex-column">
+  <div class="form-inputs d-flex align-items-center flex-column">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
