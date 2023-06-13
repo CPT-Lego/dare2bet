@@ -1,10 +1,25 @@
-<div class=" container d-flex justify-content-center vh-50 mt-1 footer-bottom-margin">
-  <%= simple_form_for(@bet, step_2: true) do |f| %>
-    <h2> Add some more bet details </h2>
-    <%= f.input :stake %>
+<div class="page-wrapper" style="max-width: 400px; margin-top: 100px">
+<div class=" container container-form align-middle  justify-content-center footer-bottom-margin w-100">
+ <%= simple_form_for(@bet, step_2: true) do |f| %>
+    <div class="text-center mt-4 mb-4">
+      <h2 class="text-underline font-weight-bold"> Add some more details </h2>
+    </div>
+    <div class="mt-2 mb-5 ">
+      <div class="progress">
+        <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+
+
+   <%= f.input :stake %>
     <%= f.input :location %>
     <%= f.input :end_time, html5: true %>
     <input  type="hidden" name="step_2" value="true" >
-    <%= f.submit  class: "btn btn-dark btn-block" %>
+
+    <div class="text-center mt-5">
+      <%= f.submit "Go to next step", class: "btn btn-violet" %>
+    </div>
   <% end %>
 </div>
+</div>
+
