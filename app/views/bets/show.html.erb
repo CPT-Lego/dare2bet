@@ -1,5 +1,5 @@
-<div class="container d-flex align-items-center justify-content-center text-center mt-2 footer-bottom-margin">
-  <div class="bet-card text-start">
+<div class="align-items-center justify-content-center text-center mt-3 footer-bottom-margin">
+  <div class="col bet-card text-start">
     <%= render "bet_card", bet: @bet %>
     <p > <strong>Bet's name : </strong><%= @bet.name %></p>
 
@@ -8,15 +8,14 @@
     <p><strong>Bet's status : </strong><%= @bet.status %></p>
     <p><strong>Created at :</strong> <%= @bet.created_at %></p>
     <p><strong>End at :</strong> <%= @bet.end_time %></p>
-     <% current_user_bet_member = @bet.bet_members.find_by(user_id: current_user.id) %>
-    <% if current_user_bet_member %>
-      <p><strong>Outcome: </strong><%= current_user_bet_member.outcome %></p>
+    <% if @bet.winner %>
+      <p><strong>Winner: </strong><%= @bet.winner.name %></p>
     <% end %>
 
 
   </div>
   <div class="d-flex justify-content-center" >
-   <%= link_to "Resolve", bet_resolve_path(@bet), class: "  mt-2 me-2 btn btn-outline-success btn-equal-width" %>
-   <%= link_to "Delete Bet", bet_path(@bet), class: "  mt-2 ms-2 btn btn-outline-danger btn-equal-width", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+   <%= link_to "Resolve", bet_resolve_path(@bet), class: "mt-2 me-2 btn btn-outline-success btn-equal-width" %>
+   <%= link_to "Delete Bet", bet_path(@bet), class: "mt-2 ms-2 btn btn-outline-danger btn-equal-width", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
 </div>
