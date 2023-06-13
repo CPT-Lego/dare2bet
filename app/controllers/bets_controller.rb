@@ -25,8 +25,8 @@ class BetsController < ApplicationController
 
   def create
     @bet = Bet.new(bet_params)
+    @bet.user = current_user
     if @bet.save
-      BetMember.create(bet: @bet, user: current_user)
       redirect_to bet_multiform_step_2_path(@bet)
     else
       render :multiform_step_1, status: :unprocessable_entity
@@ -53,28 +53,16 @@ class BetsController < ApplicationController
 
   def resolve
     @bet = Bet.find(params[:bet_id])
-    @bet_member = BetMember.find_by(bet: @bet, user: current_user)
   end
 
   def set_result
     @bet = Bet.find(params[:bet_id])
-    @bet_member = BetMember.find_by(bet: @bet, user: current_user)
-    first_outcome = params[:bet_member][:outcome]
-    @bet_member.outcome = first_outcome
-    @bet_member.save
-    @other_bet_member = @bet.bet_members.where.not(user: current_user).first
-    case first_outcome
-    when "win"
-      @other_bet_member.outcome = "loss"
-    when "tie"
-      @other_bet_member.outcome = "tie"
-    when "loss"
-      @other_bet_member.outcome = "win"
+    if @bet.update(bet_params)
+      @bet.finished!
+      redirect_to bet_path(@bet)
+    else
+      render :resolve, status: :unprocessable_entity
     end
-    @other_bet_member.save
-    @bet.status = "finished"
-    @bet.save
-    redirect_to bet_path(@bet)
   end
 
 
@@ -97,7 +85,7 @@ class BetsController < ApplicationController
   private
 
   def bet_params
-    params.require(:bet).permit(:name, :stake, :location, :end_time, :privacy, :status, :tag_id, :outcome, user_ids:[])
+    params.require(:bet).permit(:name, :stake, :location, :end_time, :privacy, :status, :tag_id, :outcome, :opponent_id, :winner_id)
   end
 
   def set_bet

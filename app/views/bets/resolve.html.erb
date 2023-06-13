@@ -1,8 +1,8 @@
 <h1>So, who won the Bet?</h1>
 
 <div class="container d-flex justify-content-center vh-50 mt-5 footer-bottom-margin">
-  <%= simple_form_for @bet_member, url: bet_set_result_path(@bet) do |f| %>
-    <%= f.input :outcome, collection: ['win', 'loss', 'tie'], label: "So, what was your Bet outcome?" , class: 'form-control' %>
+  <%= simple_form_for @bet, url: bet_set_result_path(@bet) do |f| %>
+    <%= f.input :winner_id, collection: [@bet.user, @bet.opponent], label: "So, what was your Bet outcome?" , class: 'form-control' %>
     <%= f.submit "Confirm", class: "btn btn-success btn-block" %>
   <% end %>
 </div>
