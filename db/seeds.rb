@@ -10,6 +10,7 @@ Bet.destroy_all
 User.destroy_all
 
 puts "Creating users..."
+
 user_1 = User.new(email: "chris@myemail.com", password: "123123", name: "Chris", location: "Athens, Greece,")
 file = URI.open("https://cdna.artstation.com/p/assets/images/images/015/425/426/large/frederic-caeyers-athenianv4.jpg")
 user_1.photo.attach(io: file, filename: "chris.jpg", content_type: "image/jpg")
@@ -29,6 +30,7 @@ user_4.save!
 user_5 = User.new(email: "riri@myemail.com", password: "123123", name: "Rihanna", location: "Bridgetown, Barbados")
 file = URI.open("https://static.wikia.nocookie.net/whumpapedia/images/0/07/Rihanna.jpeg")
 user_5.photo.attach(io: file, filename: "rihanna.jpg", content_type: "image/jpg")
+
 user_5.save!
 
 tag_1 = Tag.new(name: "Sport")

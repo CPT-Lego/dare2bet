@@ -4,7 +4,8 @@ class Bet < ApplicationRecord
   belongs_to :opponent, class_name: "User"
   belongs_to :winner, class_name: "User", optional: true
 
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 16 }
+  
   # validates :stake, presence: true
   # validates :location, presence: true
   # validates :privacy, presence: true
