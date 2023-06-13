@@ -1,91 +1,23 @@
-<%#
-
-<div class="single-bet-card-row" style="margin-bottom: 100px;">
-  <div class="card" style="width: 18rem;">
-  <div class="card" style="width: 18rem;">
-
-    <div class="card-top" style="height: 120px">
-     <div class="row">
-      <div class="col-3">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
-      <%# </div>
-      <div class="col-3">
-        <div class="info">
-         <h1 style="font-size: 15px, text-align:">Mateo</h1>
-         <p>Paris</p>
-        </div>
-      </div>
-     </div>
-     <div class="row">
-      <div class="col" style="text-align: left">
-      </div>
-     </div>
-     <div class="vs" style="text-align: center">
-      <p>VS.</p>
-      </div>
-      <div class="stake" style="text-align: center">
-      <p>Stake will appear here</p>
-      </div>
-      <div style="text-align: center">
-      <p>02:04:53:01<p>
-      </div>
-     <div class="row justify-content end %>
-     <%#  <div class="col-3">
-        <div class="info" style="text-align: right">
-         <h1 style="font-size: 15px">Dennis</h1>
-         <p>Paris</p>
-        </div>
-      </div>
-      <div class="col-3" style="float: right">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-bordered", alt: "avatar-bordered" %>
-      <%# </div>
-     </div>
-     <div class="row">
-      <div class="col" style="text-align: right">
-        <p>557 votes</p>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="column column-90">
-        <p class="card-text">Add a comment...</p>
-      </div>
-      <div class="column column-10">
-        <%= link_to bet_path(bet) do %>
-    <%# <p><i class="fa-solid fa-heart" style="color: #e02d00;"></i></p>
-  <% end %>
-    <%#   </div>
-    </div>
-  </div>
-</div> %>
-
-      <%# DO NOT DELETE %>
-      <%# <% if current_user.photo.attached? %>
-        <%#= cl_image_tag bet.users.first.photo.key %>
-      <%# else %>
-        <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-bordered", alt: "avatar-bordered" %>
-      <%# end %>
-
-
 
 <%= link_to bet_path(bet) do %>
-<div class="container mt-3">
+<div class="container mt-5">
   <div class="card border-0 position-relative">
     <div class="card-body">
       <div class="row">
         <div class="col-5 d-flex align-items-center gap-2">
           <%= image_tag "pig.jpg", class: "avatar" %>
-          <p class="m-0"><strong>Mateo</strong></p>
+          <p class="m-0"><strong><%= bet.user.name %></strong></p>
         </div>
         <div class="col-2 text-center align-self-center position-relative">
           <i class="fa-solid fa-bolt" style="color: #FFDE59;font-size: 25px"></i>
-          <p class="m-0 position-absolute bet-date">Stakes: $50</p>
+          <p class="m-0 position-absolute bet-date"><%= bet.stake %></p>
         </div>
         <div class="col-5 d-flex justify-content-end align-items-center gap-2">
-          <p class="m-0"><strong>Chris</strong></p>
+          <p class="m-0"><strong><%= bet.opponent.name %></strong></p>
           <%= image_tag "pig.jpg", class: "avatar" %>
         </div>
         <div class="bet-title">
-          <h4 class="m-0"><strong>Who drinks more?</strong></h4>
+          <h4 class="m-0"><strong><%= bet.name %></strong></h4>
         </div>
       </div>
     </div>

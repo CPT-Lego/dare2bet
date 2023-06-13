@@ -9,9 +9,11 @@
   </div>
   <div class="homepage-buttons text-center">
     <%= link_to "Join the fun!", new_user_session_path, class: "btn btn-outline-light join-fun-btn" %>
+    </div style= "position-absolute bottom-0">
+      <%= link_to "See live bets", "#homepage-cards", class: "btn btn-flat see-bets-btn"  %>
+      <i class="fa-solid fa-chevron-down fa-lg" style="color: #ffffff;"></i>
+    </div>
   </div>
-    <%= link_to "See live bets", "#homepage-cards", class: "btn btn-flat see-bets-btn" %>
-    <i class="fa-solid fa-chevron-down fa-lg" style="color: #ffffff;"></i>
 </div>
 
 <div class="center-content" id="homepage-cards">
