@@ -1,9 +1,9 @@
 <div class="align-items-center justify-content-center text-center mt-3 footer-bottom-margin">
   <div class="col bet-card text-start">
     <%= render "bet_card", bet: @bet %>
-    <p > <strong>Bet's name : </strong><%= @bet.name %></p>
-
+    <p ><strong>Bet's name : </strong><%= @bet.name %></p>
     <p><strong>Bet's stake : </strong><%= @bet.stake %></p>
+    <p><strong>Bet's location : </strong><%= @bet.location %></p>
     <p><strong>Bet's privacy : </strong><%= @bet.privacy %></p>
     <p><strong>Bet's status : </strong><%= @bet.status %></p>
     <p><strong>Created at :</strong> <%= @bet.created_at %></p>
