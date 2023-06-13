@@ -9,11 +9,11 @@
       <div class="row">
         <div class="col-5 d-flex align-items-center gap-2">
           <%= image_tag "pig.jpg", class: "avatar" %>
-          <p class="m-0"><strong><%=current_user.name%></strong></p>
+          <p class="m-0"><strong><%= current_user.name %></strong></p>
         </div>
         <div class="col-2 text-center align-self-center position-relative">
           <i class="fa-solid fa-bolt" style="color: #FFDE59;font-size: 25px"></i>
-          <p class="m-0 position-absolute bet-date"><%=bet.stake %></p>
+          <p class="m-0 position-absolute bet-date"><%= bet.stake %></p>
         </div>
         <div class="col-5 d-flex justify-content-end align-items-center gap-2">
           <p class="m-0"><strong><%= bet.opponent.name %></strong></p>

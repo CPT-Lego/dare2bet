@@ -7,7 +7,7 @@
     <p><strong>Bet's privacy:</strong><%= @bet.privacy.capitalize %></p>
     <p><strong>Bet's status:</strong><%= @bet.status.capitalize %></p>
     <p><strong>Created at:</strong> <%= @bet.created_at %></p>
-    <p><strong>End at :</strong> <%= @bet.end_time %></p>
+    <p><strong>Ended at:</strong> <%= @bet.end_time %></p>
     <% if @bet.winner %>
       <p><strong>Winner: </strong><%= @bet.winner.name.capitalize %></p>
     <% end %>
