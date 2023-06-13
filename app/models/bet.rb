@@ -1,8 +1,8 @@
 class Bet < ApplicationRecord
   belongs_to :tag, optional: true
-
-  has_many :bet_members, dependent: :destroy
-  has_many :users, through: :bet_members
+  belongs_to :user
+  belongs_to :opponent, class_name: "User"
+  belongs_to :winner, class_name: "User", optional: true
 
   validates :name, presence: true
   # validates :stake, presence: true

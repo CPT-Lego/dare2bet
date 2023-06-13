@@ -2,7 +2,7 @@
   <%= simple_form_for(@bet) do |f| %>
   <h2> Members </h2>
     <%= f.input :name %>
-    <%= f.association :users, include_blank: false, include_hidden: false %>
+    <%= f.association :opponent, include_blank: false, include_hidden: false %>
     <%= f.submit  class: "btn btn-dark btn-block" %>
   <% end %>
 </div>
