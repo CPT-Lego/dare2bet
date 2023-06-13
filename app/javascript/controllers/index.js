@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import OpponentSearchController from "./opponent_search_controller"
+application.register("opponent-search", OpponentSearchController)

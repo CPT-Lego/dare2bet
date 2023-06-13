@@ -1,9 +1,27 @@
-<div class=" container d-flex justify-content-center vh-50 mt-1 footer-bottom-margin">
-  <%= simple_form_for(@bet) do |f| %>
-  <h1> Let's Dare2bet! </h1>
-  <h2> Just enter some bet details: </h2>
-    <%= f.input :name %>
-    <%= f.association :opponent, include_blank: false, include_hidden: false %>
-    <%= f.submit "Next step", class: "btn btn-dark btn-block" %>
-  <% end %>
+<div class="page-wrapper" style="max-width: 400px; margin-top: 100px">
+  <div class=" container container-form align-middle justify-content-center footer-bottom-margin">
+      <%= simple_form_for(@bet) do |f| %>
+        <div class="text-center mt-4 mb-4">
+          <h1 class="text-underline font-weight-bold"> Let's Dare2Bet </h1>
+          <h2> Just enter some details </h2>
+        </div>
+        <div class="mt-2 mb-5 ">
+          <div class="progress">
+            <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <%= f.input :name, label: "Name of the bet :"  %>
+        <%= f.input :opponent_id, as: :text, input_html: { data: {controller: "opponent-search"}}  %>
+
+        <%#= f.association :opponent, include_blank: false, include_hidden: false, label: "Select your beter :" %>
+
+        <div class="text-center mt-5">
+          <%= f.submit "Go to next step", class: "btn btn-violet" %>
+        </div>
+      <% end %>
+  </div>
 </div>
+
+
+
