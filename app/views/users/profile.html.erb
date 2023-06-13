@@ -2,9 +2,10 @@
 <div class="container ">
   <div class="user-profile-details-box mx-auto" style="width: 90%;">
 
-    AVATAR HERE
+    <%= cl_image_tag(current_user.photo.key, class: "avatar-large") if current_user.photo.present? %>
 
     <h3><%= current_user.name %></h3>
+
     <p>Location: <%= current_user.location %></p>
 
     <p>Daring to Bet since: <%= current_user.created_at %></p>
