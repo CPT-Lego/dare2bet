@@ -1,4 +1,6 @@
+<div class="text-center mt-3">
 <h2>Forgot your password?</h2>
+</div>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
@@ -13,7 +15,7 @@
   <div class="form-actions text-center">
     <button class="btn btn-dark btn-block">
       Send me password reset instructions
-      <i class="fa-solid fa-envelope" style="color: #edcf35;"></i>
+      <i class="fa-solid fa-envelope" style="color: #f0edf2;"></i>
     </button>
   </div>
 <% end %>
