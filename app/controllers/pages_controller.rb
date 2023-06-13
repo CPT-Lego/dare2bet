@@ -5,6 +5,4 @@ class PagesController < ApplicationController
     redirect_to bets_path if user_signed_in?
   end
 
-  def profile
-  end
 end

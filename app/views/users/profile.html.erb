@@ -1,0 +1,18 @@
+<h1 class="custom-bg-primary text-white p-1 m-2 mx-auto text-center">My Profile</h1>
+<div class="container ">
+  <div class="user-profile-details-box mx-auto" style="width: 90%;">
+
+    AVATAR HERE
+
+    <h3><%= current_user.name %></h3>
+    <p>Location: <%= current_user.location %></p>
+
+    <p>Daring to Bet since: <%= current_user.created_at %></p>
+    <%= link_to "Edit details", edit_user_registration_path, class: "btn btn-info w-100 py-2 "%>
+    <%= link_to "Log Out", destroy_user_session_path, data: { turbo_method: :delete}, class: "btn btn-danger w-100 py-2 "%>
+  </div>
+</div>
+
+
+
+<%# <div class="user-profile-details-box"> %>
