@@ -7,7 +7,7 @@ class CreateBets < ActiveRecord::Migration[7.0]
       t.date :end_time
       t.string :status, default: "pending"
       t.string :outcome, default: "ongoing"
-      t.references :tag, null: false, foreign_key: true
+      t.references :tag, null: true, foreign_key: true
 
       t.timestamps
     end

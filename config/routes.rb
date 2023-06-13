@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   root "pages#home"
   get "profile", to: "pages#profile"
 
-  resources :bets do
+  resources :bets, except: [:new, :edit] do
+    collection do
+      get "multiform_step_1"
+    end
+    get "multiform_step_2"
+    get "multiform_step_3"
     get "resolve"
     patch "set_result"
   end
