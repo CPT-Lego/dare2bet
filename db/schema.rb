@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_11_204249) do
     t.string "stake"
     t.string "location"
     t.date "end_time"
-    t.string "status", default: "pending"
+    t.integer "status", default: 0
     t.bigint "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
