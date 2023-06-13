@@ -8,7 +8,12 @@ class Bet < ApplicationRecord
   # validates :stake, presence: true
   # validates :location, presence: true
   # validates :privacy, presence: true
-  validates :status, inclusion: %w[pending active finished]
+
+  enum :status, {
+    pending: 0,
+    active: 1,
+    finished: 2
+  }
 
   geocoded_by :location, latitude: :latitude, longitude: :longitude
   after_validation :geocode, if: :will_save_change_to_location?
