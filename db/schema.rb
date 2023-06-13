@@ -10,33 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_11_204249) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_13_021406) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "bet_members", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "bet_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "outcome", default: "undecided"
-    t.index ["bet_id"], name: "index_bet_members_on_bet_id"
-    t.index ["user_id"], name: "index_bet_members_on_user_id"
-  end
 
   create_table "bets", force: :cascade do |t|
     t.string "name"
     t.string "stake"
     t.string "location"
     t.date "end_time"
-    t.string "status", default: "pending"
+    t.integer "status", default: 0
     t.bigint "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "privacy"
     t.float "latitude"
     t.float "longitude"
+    t.bigint "user_id", null: false
+    t.bigint "opponent_id"
+    t.bigint "winner_id"
+    t.index ["opponent_id"], name: "index_bets_on_opponent_id"
     t.index ["tag_id"], name: "index_bets_on_tag_id"
+    t.index ["user_id"], name: "index_bets_on_user_id"
+    t.index ["winner_id"], name: "index_bets_on_winner_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -61,7 +57,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_11_204249) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bet_members", "bets"
-  add_foreign_key "bet_members", "users"
   add_foreign_key "bets", "tags"
+  add_foreign_key "bets", "users"
+  add_foreign_key "bets", "users", column: "opponent_id"
+  add_foreign_key "bets", "users", column: "winner_id"
 end

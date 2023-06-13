@@ -11,7 +11,9 @@
         </div>
 
         <%= f.input :name, label: "Name of the bet :"  %>
-        <%= f.input :users, label: "Select your beter :" %>
+        <%= f.input :opponent_id, as: :text, input_html: { data: {controller: "opponent-search"}}  %>
+
+        <%#= f.association :opponent, include_blank: false, include_hidden: false, label: "Select your beter :" %>
 
         <div class="text-center mt-5">
           <%= f.submit "Go to next step", class: "btn btn-violet" %>
