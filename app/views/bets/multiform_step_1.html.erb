@@ -1,7 +1,8 @@
 <div class=" container d-flex justify-content-center vh-50 mt-1 footer-bottom-margin">
   <%= simple_form_for(@bet) do |f| %>
-  <h1> Let's Dare2bet! </h1>
+  <div class="text-center"><h1> Let's Dare2bet!</h1>
   <h2> Just enter some bet details: </h2>
+  </div>
     <%= f.input :name %>
     <%= f.association :opponent, include_blank: false, include_hidden: false %>
     <%= f.submit "Next step", class: "btn btn-dark btn-block" %>
