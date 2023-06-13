@@ -1,10 +1,10 @@
-<div class="map-in-center footer-bottom-margin"
+<div class="map-in-center"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-<div class="bets-container pb-5">
+<div class="footer-bottom-margin bets-container content pb-5">
   <% @bets.each do |bet| %>
     <div class="bet-card">
       <%= render "bet_card", bet: bet %>
