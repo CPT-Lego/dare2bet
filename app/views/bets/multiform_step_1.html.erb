@@ -1,12 +1,4 @@
 
-<div class=" container d-flex justify-content-center vh-50 mt-1 footer-bottom-margin">
-  <%= simple_form_for(@bet) do |f| %>
- <h1> Let's Dare2bet!</h1>
-  <h2> Just enter some bet details: </h2>
-    <%= f.input :name %>
-    <%= f.association :opponent, include_blank: false, include_hidden: false %>
-    <%= f.submit "Next step", class: "btn btn-dark btn-block" %>
-  <% end %>
 
 <div class="page-wrapper" style="max-width: 400px; margin-top: 100px">
   <div class=" container container-form align-middle justify-content-center footer-bottom-margin">
@@ -33,6 +25,3 @@
   </div>
 
 </div>
-
-
-
