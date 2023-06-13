@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   get "profile", to: "users#profile"
   get "users/:id/edit", to: "users#edit", as: :edit_user
 
-  resources :bets do
+  resources :bets, except: [:new, :edit] do
+    collection do
+      get "multiform_step_1"
+    end
+    get "multiform_step_2"
+    get "multiform_step_3"
     get "resolve"
     patch "set_result"
   end

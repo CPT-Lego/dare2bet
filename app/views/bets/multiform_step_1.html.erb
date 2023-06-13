@@ -3,15 +3,6 @@
   <h2> Members </h2>
     <%= f.input :name %>
     <%= f.association :users, include_blank: false, include_hidden: false %>
-
-    <h2> Bet's info </h2>
-    <%= f.input :stake %>
-    <%= f.input :location %>
-     <%= f.input :end_time, html5: true %>
-
-    <h2> Bet's privacy </h2>
-    <%= f.input :privacy, collection: ["public", "private"], selected: "private" %>
-    <%= f.association :tag %>
     <%= f.submit  class: "btn btn-dark btn-block" %>
   <% end %>
 </div>

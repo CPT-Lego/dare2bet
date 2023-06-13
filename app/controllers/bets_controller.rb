@@ -1,10 +1,11 @@
 class BetsController < ApplicationController
+  before_action :set_bet, only: [:multiform_step_2, :multiform_step_3, :update, :show]
+
   def index
     @bets = Bet.all
   end
 
   def show
-    @bet = Bet.find(params[:id])
   end
 
   def around_me
@@ -18,9 +19,34 @@ class BetsController < ApplicationController
     end
   end
 
-  def new
+  def multiform_step_1
     @bet = Bet.new
   end
+
+  def create
+    @bet = Bet.new(bet_params)
+    if @bet.save
+      BetMember.create(bet: @bet, user: current_user)
+      redirect_to bet_multiform_step_2_path(@bet)
+    else
+      render :multiform_step_1, status: :unprocessable_entity
+    end
+  end
+
+  def multiform_step_2
+  end
+
+  def multiform_step_3
+  end
+
+ def update
+  @bet.update(bet_params)
+  if params[:step_2]
+    redirect_to bet_multiform_step_3_path(@bet)
+  else
+    redirect_to bets_path
+  end
+ end
 
   def edit
   end
@@ -51,15 +77,6 @@ class BetsController < ApplicationController
     redirect_to bet_path(@bet)
   end
 
-  def create
-    @bet = Bet.new(bet_params)
-    if @bet.save
-      BetMember.create(bet: @bet, user: current_user)
-      redirect_to my_bets_path(@bet)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
 
   def destroy
     @bet = Bet.find(params[:id])
@@ -83,4 +100,11 @@ class BetsController < ApplicationController
     params.require(:bet).permit(:name, :stake, :location, :end_time, :privacy, :status, :tag_id, :outcome, user_ids:[])
   end
 
+  def set_bet
+    if params[:bet_id]
+      @bet = Bet.find(params[:bet_id])
+    else
+      @bet = Bet.find(params[:id])
+    end
+  end
 end

@@ -1,0 +1,8 @@
+<div class=" container d-flex justify-content-center vh-50 mt-1 footer-bottom-margin">
+  <%= simple_form_for(@bet) do |f| %>
+    <h2> Bet's privacy </h2>
+    <%= f.input :privacy, collection: ["public", "private"], selected: "private" %>
+    <%= f.association :tag %>
+    <%= f.submit  class: "btn btn-dark btn-block" %>
+  <% end %>
+</div>
