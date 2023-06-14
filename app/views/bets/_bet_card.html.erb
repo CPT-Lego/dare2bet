@@ -3,16 +3,20 @@
     <%= link_to bet_path(bet), class: "text-decoration-none" do %>
       <div class="card-body pt-4 <%= "rounded-top-4 rounded-0" if action_name == "show" %>">
         <div class="row">
-          <div class="col-5 d-flex align-items-center gap-2">
-            <%= cl_image_tag(bet.user.photo.key, class: "avatar") if bet.user.photo.key.present? %>
-            <p class="m-0"><strong><%= bet.user.name %></strong></p>
+          <div class="col-5 d-flex align-items-center justify-content-center gap-2">
+            <div class="text-center">
+              <%= cl_image_tag(bet.user.photo.key, class: "avatar") if bet.user.photo.key.present? %>
+              <p class="m-0"><strong><%= bet.user.name %></strong></p>
+            </div>
           </div>
           <div class="col-2 text-center align-self-center position-relative">
             <i class="fa-solid fa-bolt" style="color: #FFDE59;font-size: 35px"></i>
           </div>
-          <div class="col-5 d-flex justify-content-end align-items-center gap-2">
-            <p class="m-0"><strong><%= bet.opponent.name %></strong></p>
-            <%= cl_image_tag(bet.opponent.photo.key, class: "avatar") if bet.opponent.photo.key.present? %>
+          <div class="col-5 d-flex align-items-center justify-content-center gap-2">
+            <div class="text-center">
+              <%= cl_image_tag(bet.opponent.photo.key, class: "avatar") if bet.opponent.photo.key.present? %>
+              <p class="m-0"><strong><%= bet.opponent.name %></strong></p>
+            </div>
           </div>
           <div class="border bet-title">
             <h4 class="m-0"><strong><%= bet.name %></strong></h4>
