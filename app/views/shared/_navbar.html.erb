@@ -1,12 +1,11 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ", id="height">
-<% unless action_name == "index" %>
-<%= link_to "javascript:history.back()", class: "bg-white text-white btn btn-outline-primary ms-2" do %>
-  <i class="fa-solid fa-angle-left no-hover" style="color: #8c50f7;"></i>
-<% end %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon position-relative", id="height">
+  <% unless action_name == "index" %>
+    <%= link_to "javascript:history.back()", class: "bg-white text-white btn ms-4" do %>
+      <i class="fa-solid fa-angle-left no-hover" style="color: #8c50f7;"></i>
+    <% end %>
   <% end %>
 
-    <%= link_to my_bets_path, class: "navbar-brand mx-auto" do %>
-      <%= image_tag "pigpurple.png", alt:"Dare Bet fancy logo", class:"navlogo" %>
-    <% end %>
-
+  <%= link_to my_bets_path, class: "navbar-brand mx-auto" do %>
+    <%= image_tag "pigpurple.png", alt:"Dare Bet fancy logo", class:"navlogo position-absolute" %>
+  <% end %>
 </div>
