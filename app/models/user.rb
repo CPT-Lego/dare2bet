@@ -12,10 +12,18 @@ class User < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
 
   def active_bets
-    Bet.where("(user_id = :user OR opponent_id = :user) AND (status = 0 OR status = 1)", user: self.id)
+    Bet.where("(user_id = :user OR opponent_id = :user) AND status = 1", user: self.id)
   end
 
   def past_bets
     Bet.where("(user_id = :user OR opponent_id = :user) AND status = 2", user: self.id)
+  end
+
+  def sent_pending_bets
+    Bet.where("user_id = :user AND status = 0", user: self.id)
+  end
+
+  def received_pending_bets
+    Bet.where("opponent_id = :user AND status = 0", user: self.id)
   end
 end
