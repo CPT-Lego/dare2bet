@@ -78,8 +78,8 @@ class BetsController < ApplicationController
   end
 
   def my_bets
-    @bets = current_user.bets
-    #@bets = Bet.where(user_id: current_user.id)
+    @active_bets = current_user.active_bets
+    @past_bets = current_user.past_bets
   end
 
   private
