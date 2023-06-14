@@ -18,8 +18,8 @@
     </div>
   </div>
 </div>
-  <div class="d-flex justify-content-center mt-3" >
-   <%= link_to "Resolve", bet_resolve_path(@bet), class: "mt-2 me-2 btn btn-lg btn-outline-success btn-equal-width" %>
-   <%= link_to "Delete Bet", bet_path(@bet), class: "mt-2 ms-2 btn btn-lg btn-outline-danger btn-equal-width", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <div class="d-flex justify-content-center text center mt-3" >
+   <%= link_to "Resolve Bet", bet_resolve_path(@bet), class: "mt-2 me-2 btn btn-lg btn-success btn-equal-width text-center" %>
+   <%= link_to "Delete Bet", bet_path(@bet), class: "mt-2 ms-2 btn btn-lg btn-danger btn-equal-width", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   </div>
 </div>
