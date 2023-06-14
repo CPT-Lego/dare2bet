@@ -17,6 +17,7 @@
   color: white;
   text-align: center;
   float: left;
+  z-index: 999;
 }
 
 .footer--icons {
@@ -43,5 +44,5 @@
 }
 
 .footer-bottom-margin {
-  margin-bottom: 80px;
+  margin-bottom: 100px;
 }
