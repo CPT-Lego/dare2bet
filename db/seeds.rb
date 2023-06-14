@@ -59,29 +59,29 @@ tag_6 = Tag.new(name: "Other ;)")
 tag_6.save!
 
 puts "Creating bets..."
-bet_1 = Bet.new(name: "Ping pong", location: "Lisbon", stake: "€10", end_time: "10-11-2023", status: 1, tag: tag_1, privacy: "public", user: user_3, opponent: user_7)
+bet_1 = Bet.new(name: "Ping pong", location: "Lisbon", stake: "€10", end_time: "2023-11-10", status: 1, tag: tag_1, privacy: "public", user: user_3, opponent: user_7)
 bet_1.save!
 
-bet_2 = Bet.new(name: "Fifa - best of 7", location: "Paris", stake: "€50", end_time: "20-06-2023", status: 1, tag: tag_2, privacy: "public", user: user_1, opponent: user_4)
+bet_2 = Bet.new(name: "Fifa - best of 7", location: "Paris", stake: "€50", end_time: "2023-06-20", status: 1, tag: tag_2, privacy: "public", user: user_1, opponent: user_4)
 bet_2.save!
 
-bet_3 = Bet.new(name: "Trump in jail", location: "Guantanamo Bay, Cuba", stake: "€35", end_time: "05-11-2024", status: 1, tag: tag_4, privacy: "public", user: user_2, opponent: user_3)
+bet_3 = Bet.new(name: "Trump in jail", location: "Guantanamo Bay, Cuba", stake: "€35", end_time: "2024-11-05", status: 1, tag: tag_4, privacy: "public", user: user_2, opponent: user_3)
 bet_3.save!
 
-bet_4 = Bet.new(name: "Climb Mont Blanc", location: "Mont Blanc", stake: "€5000", end_time: "31-12-2023", status: 1, tag: tag_3, privacy: "public", user: user_4, opponent: user_7)
+bet_4 = Bet.new(name: "Climb Mont Blanc", location: "Mont Blanc", stake: "€5000", end_time: "2023-12-31", status: 1, tag: tag_3, privacy: "public", user: user_4, opponent: user_7)
 bet_4.save!
 
-bet_5 = Bet.new(name: "Man City treble", location: "Manchester, England", stake: "Lunch at Honest Greens", end_time: "10-06-2023", status: 2, tag: tag_1, privacy: "public", user: user_6, opponent: user_1)
+bet_5 = Bet.new(name: "Man City treble", location: "Manchester, England", stake: "Lunch at Honest Greens", end_time: "2023-06-10", status: 2, tag: tag_1, privacy: "public", user: user_6, opponent: user_1)
 bet_5.save!
 
-bet_6 = Bet.new(name: "Backgammon", location: "Faro, Portugal", stake: "Beach Cocktails", end_time: "30-06-2023", status: 0, tag: tag_5, privacy: "public", user: user_1, opponent: user_8)
+bet_6 = Bet.new(name: "Backgammon", location: "Faro, Portugal", stake: "Beach Cocktails", end_time: "2023-06-30", status: 0, tag: tag_5, privacy: "public", user: user_1, opponent: user_8)
 bet_6.save!
 
-bet_7 = Bet.new(name: "Denver NBA champs", location: "Denver, USA", stake: "$20", end_time: "13-06-2023", status: 2, tag: tag_1, privacy: "public", user: user_2, opponent: user_1)
+bet_7 = Bet.new(name: "Denver NBA champ", location: "Denver, USA", stake: "$20", end_time: "2023-06-13", status: 2, tag: tag_1, privacy: "public", user: user_2, opponent: user_1)
 bet_7.save!
 
-bet_8 = Bet.new(name: "Sing Umbrella", location: "Porto, Portugal", stake: "Spa day", end_time: "31-12-2023", status: 0, tag: tag_6, privacy: "public", user: user_1, opponent: user_5)
+bet_8 = Bet.new(name: "Sing Umbrella", location: "Porto, Portugal", stake: "Spa day", end_time: "2023-12-31", status: 0, tag: tag_6, privacy: "public", user: user_1, opponent: user_5)
 bet_8.save!
 
-bet_9 = Bet.new(name: "Build an app", location: "Lisbon, Portugal", stake: "Our future", end_time: "16-06-2023", status: 1, tag: tag_3, privacy: "public", user: user_1, opponent: user_7)
+bet_9 = Bet.new(name: "Build an app", location: "Lisbon, Portugal", stake: "Our future", end_time: "2023-06-16", status: 1, tag: tag_3, privacy: "public", user: user_1, opponent: user_7)
 bet_9.save!

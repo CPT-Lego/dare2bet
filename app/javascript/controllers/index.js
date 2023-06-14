@@ -12,3 +12,6 @@ application.register("map", MapController)
 
 import OpponentSearchController from "./opponent_search_controller"
 application.register("opponent-search", OpponentSearchController)
+
+import TimerController from "./timer_controller"
+application.register("timer", TimerController)

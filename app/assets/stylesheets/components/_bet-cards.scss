@@ -14,11 +14,9 @@
 .card-body {
   display: flex;
   flex-direction: column;
-  grid-gap: 10px;
   background-color: #8C52ff;
   border-radius: 20px;
   color: white;
-  padding-bottom: 32px;
   box-shadow: 5px 5px color rgb(107, 62, 231);
   font-size: 22px;
 }
@@ -28,6 +26,7 @@
 }
 
 .bet-title {
+  z-index: 10;
   position: absolute;
   top: -30px;
   left: 50%;
@@ -42,8 +41,28 @@
 }
 
 .bet-date {
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 20px;
-  width: 200px;
+}
+
+.expired-card {
+
+  &:after {
+    background: rgba(180, 180, 180, 0.6);
+    inset: 0;
+    width: 100%;
+    content: "";
+    top: 0;
+    position: absolute;
+    border-radius: 20px;
+  }
+
+  .bet-title:after {
+    background: rgba(180, 180, 180, 0.6);
+    inset: 0;
+    width: 100%;
+    content: "";
+    top: 0;
+    position: absolute;
+    border-radius: 15px;
+  }
 }

@@ -9,6 +9,7 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue
     this.map = new mapboxgl.Map({
       container: this.element,
+      marker: false,
       projection: 'globe',
       style: "mapbox://styles/mapbox/satellite-streets-v12",
       center: [38.7077507, -9.1365919],
