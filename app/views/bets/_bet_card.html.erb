@@ -1,8 +1,10 @@
 
 <%= link_to bet_path(bet), class: "text-decoration-none" do %>
-<div class="container mt-5">
+
+<div class=" mt-5">
   <div class="card border-0 position-relative <%= "expired-card" if bet.finished? %>">
-    <div class="card-body pt-4">
+     <div class="card-body <%= "rounded-top-4 rounded-0" if action_name == "show" %>">
+
       <div class="row">
         <div class="col-5 d-flex align-items-center gap-2">
         <%= cl_image_tag(bet.user.photo.key, class: "avatar") if bet.user.photo.key.present? %>

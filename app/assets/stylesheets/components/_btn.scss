@@ -10,7 +10,7 @@
 }
 
 .btn-equal-width {
-  width: 20px;
+
 }
 
 .container-form {
@@ -22,4 +22,26 @@
 .page-wrapper {
   width: 100 px;
   margin: 0 auto;
+}
+
+
+.btn-info-1 {
+  background-color: #32bb76;
+  color: white;
+
+}
+
+.btn-info-1:hover {
+  background-color: #2d9661;
+  color:white;
+}
+
+.btn-hover-light-1 {
+  background-color: #ed5e68;
+  color: white;
+
+}
+
+.btn-hover-light-1:hover {
+  background-color: #9b401f;
 }
