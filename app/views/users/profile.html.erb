@@ -18,6 +18,35 @@
   </div>
 </div>
 
-
-
 <%# <div class="user-profile-details-box"> %>
+
+<div class="footer-bottom-margin">
+  <div class="mt-3 mb-2">
+    <h3 class="custom-bg-info mb-2 mt-5 mx-auto text-center"><strong>Received Pending Bets</strong></h3>
+  </div>
+  <div>
+    <% if @received_pending_bets.present? %>
+      <% @received_pending_bets.each do |bet| %>
+        <div class="mt-4 pb-4">
+          <%= render "bets/bet_card", bet: bet %>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="text-center">You haven't received any new bets.</p>
+    <% end %>
+  </div>
+  <div class="mt-3 mb-2">
+    <h3 class="custom-bg-info mb-2 mt-5 mx-auto text-center"><strong>Sent Bets</strong></h3>
+  </div>
+  <div class="footer-bottom-margin">
+    <% if @sent_pending_bets.present? %>
+      <% @sent_pending_bets.each do |bet| %>
+        <div class="mt-4">
+          <%= render "bets/bet_card", bet: bet %>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="text-center">No sent bets.</p>
+    <% end %>
+  </div>
+</div>

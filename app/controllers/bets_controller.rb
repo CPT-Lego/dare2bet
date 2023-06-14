@@ -1,5 +1,5 @@
 class BetsController < ApplicationController
-  before_action :set_bet, only: [:multiform_step_2, :multiform_step_3, :update, :show]
+  before_action :set_bet, only: [:multiform_step_2, :multiform_step_3, :update, :show, :accept, :deny]
 
   def index
     @bets = Bet.all
@@ -80,6 +80,18 @@ class BetsController < ApplicationController
   def my_bets
     @active_bets = current_user.active_bets
     @past_bets = current_user.past_bets
+  end
+
+  def accept
+    @bet.active!
+
+    redirect_to bet_path(@bet), notice: "You accepted the bet #{@bet.name}!"
+  end
+
+  def deny
+    @bet.rejected!
+
+    redirect_to profile_path, notice: "You rejected the bet #{@bet.name}"
   end
 
   private

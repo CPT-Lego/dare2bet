@@ -9,6 +9,8 @@ class UsersController < ApplicationController
   end
 
   def profile
+    @sent_pending_bets = current_user.sent_pending_bets
+    @received_pending_bets = current_user.received_pending_bets
   end
 
   def edit

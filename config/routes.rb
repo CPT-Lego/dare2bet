@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     get "multiform_step_3"
     get "resolve"
     patch "set_result"
+
+    post 'accept'
+    post 'deny'
   end
 
   get "my_bets", to: "bets#my_bets"
