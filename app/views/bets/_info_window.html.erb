@@ -1,7 +1,15 @@
-<h2><%= bet.name %></h2>
-
-<p>Bet stake : <%= bet.stake %></p>
-<p>Bet privacy : <%= bet.privacy %></p>
-<p>Bet status : <%= bet.status %></p>
-<p>Created at : <%= bet.created_at %></p>
-<p>Ends at :<%= bet.end_time %></p>
+<div class="rounded-2">
+  <h2><%= bet.name %></h2>
+  <div>
+    <p><i class="fa-solid fa-user"></i> <strong>User:</strong> <%= bet.user.name %></p>
+    <p>VS.</p>
+    <p><i class="fa-regular fa-user"></i> <strong>User:</strong> <%= bet.opponent.name %></p>
+  </div>
+  <div class="text-start">
+    <p><i class="fa-solid fa-sack-dollar"></i> <strong>Stake:</strong> <%= bet.stake %></p>
+    <p><i class="fa-solid fa-lock"></i> <strong>Privacy:</strong> <%= bet.privacy %></p>
+    <p><i class="fa-regular fa-square-check"></i> <strong>Status:</strong> <%= bet.status %></p>
+    <p><i class="fa-regular fa-calendar-plus"></i> <strong>Created at:</strong> <%= bet.created_at %></p>
+    <p><i class="fa-regular fa-calendar-check"></i> <strong>Ends at:</strong> <%= bet.end_time %></p>
+  </div>
+</div>
