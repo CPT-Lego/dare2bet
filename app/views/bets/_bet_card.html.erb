@@ -1,45 +1,44 @@
-
-  <div class="container mt-5">
-    <div class="card border-0 position-relative <%= "expired-card" if bet.finished? %>">
-      <%= link_to bet_path(bet), class: "text-decoration-none" do %>
-        <div class="card-body pt-4">
-          <div class="row">
-            <div class="col-5 d-flex align-items-center gap-2">
+<div class="container mt-5">
+  <div class="card border-0 position-relative <%= "expired-card" if bet.finished? %>">
+    <%= link_to bet_path(bet), class: "text-decoration-none" do %>
+      <div class="card-body pt-4 <%= "rounded-top-4 rounded-0" if action_name == "show" %>">
+        <div class="row">
+          <div class="col-5 d-flex align-items-center gap-2">
             <%= cl_image_tag(bet.user.photo.key, class: "avatar") if bet.user.photo.key.present? %>
-              <p class="m-0"><strong><%= bet.user.name %></strong></p>
-            </div>
-            <div class="col-2 text-center align-self-center position-relative">
-              <i class="fa-solid fa-bolt" style="color: #FFDE59;font-size: 35px"></i>
-            </div>
-            <div class="col-5 d-flex justify-content-end align-items-center gap-2">
-              <p class="m-0"><strong><%= bet.opponent.name %></strong></p>
-              <%= cl_image_tag(bet.opponent.photo.key, class: "avatar") if bet.opponent.photo.key.present? %>
-            </div>
-            <div class="border bet-title">
-              <h4 class="m-0"><strong><%= bet.name %></strong></h4>
-            </div>
+            <p class="m-0"><strong><%= bet.user.name %></strong></p>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <p class="text-center m-0" style="font-size: 15px"><i class="fa-regular fa-hourglass-half"></i> <span data-controller="timer" data-timer-endtime-value="<%= bet.end_time %>" data-timer-target='span'></span></p>
-            </div>
+          <div class="col-2 text-center align-self-center position-relative">
+            <i class="fa-solid fa-bolt" style="color: #FFDE59;font-size: 35px"></i>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <p class="text-center m-0 bet-date">Stakes:  <%= bet.stake %></p>
-            </div>
+          <div class="col-5 d-flex justify-content-end align-items-center gap-2">
+            <p class="m-0"><strong><%= bet.opponent.name %></strong></p>
+            <%= cl_image_tag(bet.opponent.photo.key, class: "avatar") if bet.opponent.photo.key.present? %>
+          </div>
+          <div class="border bet-title">
+            <h4 class="m-0"><strong><%= bet.name %></strong></h4>
           </div>
         </div>
-      <% end %>
-      <% if (current_user.received_pending_bets.where(id: bet.id).present? if current_user) && action_name == "profile" %>
-        <div class="bet-actions-btns">
-          <%= link_to bet_accept_path(bet), class: "bet-accept-btn", data: { turbo_method: :post } do %>
-            <i class="fa-solid fa-circle-check"></i>
-          <% end %>
-          <%= link_to bet_deny_path(bet), class: "bet-deny-btn", data: { turbo_method: :post } do %>
-            <i class="fa-solid fa-circle-xmark"></i>
-          <% end %>
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center m-0" style="font-size: 15px"><i class="fa-regular fa-hourglass-half"></i> <span data-controller="timer" data-timer-endtime-value="<%= bet.end_time %>" data-timer-target='span'></span></p>
+          </div>
         </div>
-      <% end %>
-    </div>
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center m-0 bet-date">Stakes:  <%= bet.stake %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% if (current_user.received_pending_bets.where(id: bet.id).present? if current_user) && action_name == "profile" %>
+      <div class="bet-actions-btns">
+        <%= link_to bet_accept_path(bet), class: "bet-accept-btn", data: { turbo_method: :post } do %>
+          <i class="fa-solid fa-circle-check"></i>
+        <% end %>
+        <%= link_to bet_deny_path(bet), class: "bet-deny-btn", data: { turbo_method: :post } do %>
+          <i class="fa-solid fa-circle-xmark"></i>
+        <% end %>
+      </div>
+    <% end %>
   </div>
+</div>
