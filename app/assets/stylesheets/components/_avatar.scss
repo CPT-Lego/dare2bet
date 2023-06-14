@@ -13,3 +13,10 @@
   object-position: center;
   box-shadow: 1px 1px black;
 }
+
+.avatar-profile {
+  left: 50%;
+  transform: translateX(-50%);
+  top: -70px;
+  border: 5px solid white;
+}
