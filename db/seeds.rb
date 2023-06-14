@@ -77,7 +77,7 @@ bet_5.save!
 bet_6 = Bet.new(name: "Backgammon", location: "Faro, Portugal", stake: "Beach Cocktails", end_time: "30-06-2023", status: 0, tag: tag_5, privacy: "public", user: user_1, opponent: user_8)
 bet_6.save!
 
-bet_7 = Bet.new(name: "Denver NBA champs", location: "Denver, USA", stake: "$20", end_time: "13-06-2023", status: 2, tag: tag_1, privacy: "public", user: user_2, opponent: user_1)
+bet_7 = Bet.new(name: "Denver NBA champ", location: "Denver, USA", stake: "$20", end_time: "13-06-2023", status: 2, tag: tag_1, privacy: "public", user: user_2, opponent: user_1)
 bet_7.save!
 
 bet_8 = Bet.new(name: "Sing Umbrella", location: "Porto, Portugal", stake: "Spa day", end_time: "31-12-2023", status: 0, tag: tag_6, privacy: "public", user: user_1, opponent: user_5)
