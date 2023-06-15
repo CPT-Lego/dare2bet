@@ -14,7 +14,7 @@
         </div>
 
 
-      <%= f.input :name, label: "Name of the bet : (max 16)", maxlength: 16 %>
+      <%= f.input :name, label: "Name of the bet : (max 16)", maxlength: 16, input_html: { autocomplete: "off" } %>
         <%= f.input :opponent_id, as: :text, input_html: { data: {controller: "opponent-search"}}  %>
 
         <%#= f.association :opponent, include_blank: false, include_hidden: false, label: "Select your beter :" %>

@@ -1,15 +1,14 @@
 <div class="rounded-2">
   <h2><%= bet.name %></h2>
+  <hr>
   <div>
     <p><i class="fa-solid fa-user"></i> <strong>User:</strong> <%= bet.user.name %></p>
     <p>VS.</p>
     <p><i class="fa-regular fa-user"></i> <strong>User:</strong> <%= bet.opponent.name %></p>
   </div>
+  <hr>
   <div class="text-start">
     <p><i class="fa-solid fa-sack-dollar"></i> <strong>Stake:</strong> <%= bet.stake %></p>
-    <p><i class="fa-solid fa-lock"></i> <strong>Privacy:</strong> <%= bet.privacy %></p>
-    <p><i class="fa-regular fa-square-check"></i> <strong>Status:</strong> <%= bet.status %></p>
-    <p><i class="fa-regular fa-calendar-plus"></i> <strong>Created at:</strong> <%= bet.created_at %></p>
-    <p><i class="fa-regular fa-calendar-check"></i> <strong>Ends at:</strong> <%= bet.end_time %></p>
+    <i class="fa-regular fa-hourglass-half"></i> <span data-controller="timer" data-timer-endtime-value="<%= bet.end_time %>" data-timer-target='span'></span>
   </div>
 </div>
