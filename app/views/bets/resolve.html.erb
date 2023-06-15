@@ -1,10 +1,14 @@
-<div class="text-center mt-5">
-<h1><strong>So, who won the Bet?</strong></h1>
+<div class="mt-4 mb-2">
+  <h3 class="custom-bg-info mb-2 mx-auto text-center"><strong>Who won the bet?</strong></h3>
 </div>
 
 <div class="container d-flex justify-content-center vh-50 mt-5 footer-bottom-margin">
   <%= simple_form_for @bet, url: bet_set_result_path(@bet) do |f| %>
-    <%= f.input :winner_id, collection: [@bet.user, @bet.opponent], class: 'form-control' %>
-    <%= f.submit "Confirm", id: "confirm-button", class: "btn btn-success btn-block" %>
+    <%= f.input :winner_id,
+                collection: [@bet.user, @bet.opponent],
+                class: 'form-control',
+                label: "<i class='fa-solid fa-crown' style='color: #e9cd16;'></i> Winner".html_safe,
+                label_html: { class: "fw-bold" } %>
+    <%= f.submit "Settle!", id: "confirm-button", class: "bet-resolve-btn btn-block" %>
   <% end %>
 </div>

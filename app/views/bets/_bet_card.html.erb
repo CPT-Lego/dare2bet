@@ -1,10 +1,13 @@
-<div class=" mt-5">
-  <div class="card border-0 position-relative <%= "expired-card" if bet.finished? %>">
+<div class="mt-5" data-controller="<%= "confetti" if bet.finished? && action_name == "show" %>">
+  <div class="card border-0 position-relative <%= "expired-card" if bet.finished? && action_name != "show" %>">
     <%= link_to bet_path(bet), class: "text-decoration-none" do %>
       <div class="card-body pt-4 <%= "rounded-top-4 rounded-0" if action_name == "show" %>">
         <div class="row">
           <div class="col-5 d-flex align-items-center justify-content-center gap-2">
-            <div class="text-center">
+            <div class="position-relative text-center<%= bet.user == bet.winner ? " bet-winner" : (" bet-loser" if bet.finished?) %>">
+              <% if bet.user == bet.winner %>
+                <i class="fa-solid fa-crown position-absolute bet-winner-crown" style="color: #e9cd16;"></i>
+              <% end %>
               <%= cl_image_tag(bet.user.photo.key, class: "avatar") if bet.user.photo.key.present? %>
               <p class="m-0"><strong><%= bet.user.name %></strong></p>
             </div>
@@ -13,7 +16,10 @@
             <i class="fa-solid fa-bolt" style="color: #FFDE59;font-size: 35px"></i>
           </div>
           <div class="col-5 d-flex align-items-center justify-content-center gap-2">
-            <div class="text-center">
+            <div class="position-relative text-center<%= bet.opponent == bet.winner ? " bet-winner" : (" bet-loser" if bet.finished?) %>">
+              <% if bet.opponent == bet.winner %>
+                <i class="fa-solid fa-crown position-absolute" style="color: #e9cd16;"></i>
+              <% end %>
               <%= cl_image_tag(bet.opponent.photo.key, class: "avatar") if bet.opponent.photo.key.present? %>
               <p class="m-0"><strong><%= bet.opponent.name %></strong></p>
             </div>
@@ -24,12 +30,15 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <p class="text-center m-0" style="font-size: 15px"><i class="fa-regular fa-hourglass-half"></i> <span data-controller="timer" data-timer-endtime-value="<%= bet.end_time %>" data-timer-target='span'></span></p>
+            <p class="text-center m-0" style="font-size: 15px"><i class="fa-regular fa-hourglass-half"></i> <span data-controller="timer" data-timer-endtime-value="<%= bet.active? ? bet.end_time : 0 %>" data-timer-target='span'></span></p>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <p class="text-center m-0 bet-date">Stakes:  <%= bet.stake %></p>
+            <p class="text-center bet-date bet-stake">
+              <i class="fa-solid fa-award"></i>
+              Stakes:  <%= bet.stake %>
+            </p>
           </div>
         </div>
       </div>
