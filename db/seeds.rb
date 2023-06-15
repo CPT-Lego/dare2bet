@@ -8,6 +8,7 @@ require "open-uri"
 puts "Cleaning database..."
 Bet.destroy_all
 User.destroy_all
+Tag.destroy_all
 
 puts "Creating users..."
 

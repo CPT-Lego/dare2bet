@@ -11,8 +11,8 @@
     </div>
 
 
-   <%= f.input :stake %>
-    <%= f.input :location %>
+    <%= f.input :stake, input_html: { autocomplete: "off" } %>
+    <%= f.input :location, input_html: { autocomplete: "off" } %>
     <%= f.input :end_time, html5: true %>
     <input  type="hidden" name="step_2" value="true" >
 
@@ -22,4 +22,3 @@
   <% end %>
 </div>
 </div>
-
