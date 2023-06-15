@@ -32,7 +32,7 @@ export default class extends Controller {
       // If the count down is finished, write some text
       if (distance < 0) {
         clearInterval(timer);
-        span.textContent = "EXPIRED";
+        span.textContent = "Settled";
       }
     }, 1000)
   }

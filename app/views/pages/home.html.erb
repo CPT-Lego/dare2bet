@@ -8,17 +8,18 @@
     </div>
   </div>
   <div class="homepage-buttons text-center">
-    <%= link_to "Join the fun!", new_user_session_path, class: "btn btn-outline-light join-fun-btn" %>
-    </div style= "position-absolute bottom-0">
-      <%= link_to "See live bets", "#homepage-cards", class: "btn btn-flat see-bets-btn"  %>
-      <i class="fa-solid fa-chevron-down fa-lg" style="color: #ffffff;"></i>
+    <%= link_to "Join the fun!", new_user_session_path, class: "btn btn-outline-light join-fun-btn mb-0" %>
+    <div class="position-absolute bottom-0">
+      <%= link_to "See live bets", "#homepage-cards", class: "text-white d-block", style: "14px"  %>
+      <i class="fa-solid fa-chevron-down fa-lg" style="color: #ffffff; font-size: 12px;"></i>
     </div>
   </div>
 </div>
 
-<div class="center-content" id="homepage-cards">
+<div class="container center-content" id="homepage-cards">
   <div class="col">
-    <% Bet.all.each do |bet| %>
+    <h3 class="mt-4 custom-bg-info mb-2 mx-auto text-center"><strong>Bets Around Me</strong></h3>
+    <% @bets.each do |bet| %>
       <div class="col">
       <%= render "bets/bet_card", bet: bet %>
       </div>

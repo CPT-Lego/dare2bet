@@ -2,14 +2,14 @@ class BetsController < ApplicationController
   before_action :set_bet, only: [:multiform_step_2, :multiform_step_3, :update, :show, :accept, :deny]
 
   def index
-    @bets = Bet.all
+    @bets = Bet.all.order(end_time: :asc).where(status: 1)
   end
 
   def show
   end
 
   def around_me
-    @bets = Bet.all
+    @bets = Bet.all.order(end_time: :asc).where(status: 1)
     @markers = @bets.geocoded.map do |bet|
       {
         lat: bet.latitude,
@@ -59,7 +59,7 @@ class BetsController < ApplicationController
     @bet = Bet.find(params[:bet_id])
     if @bet.update(bet_params)
       @bet.finished!
-      redirect_to bet_path(@bet)
+      redirect_to bet_path(@bet, bet_settled: true)
     else
       render :resolve, status: :unprocessable_entity
     end
