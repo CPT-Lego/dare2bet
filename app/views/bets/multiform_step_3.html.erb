@@ -10,14 +10,12 @@
       </div>
     </div>
 
-     <%= f.input :privacy, collection: ["public", "private"], selected: "private" %>
+     <%= f.input :privacy, collection: ["public", "private"], selected: "public" %>
     <%= f.association :tag %>
 
     <div class="text-center mt-5">
-      <%= f.submit "Create the bet", class: "btn btn-violet" %>
+      <%= link_to "Create the bet", bet_path(@bet), class: "btn btn-violet" %>
     </div>
   <% end %>
 </div>
 </div>
-
-
