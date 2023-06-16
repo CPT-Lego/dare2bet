@@ -12,8 +12,8 @@ Tag.destroy_all
 
 puts "Creating users..."
 
-user_1 = User.new(email: "chris@myemail.com", password: "123123", name: "Chris", location: "Athens, Greece,")
-file = URI.open("https://cdna.artstation.com/p/assets/images/images/015/425/426/large/frederic-caeyers-athenianv4.jpg")
+user_1 = User.new(email: "chris@myemail.com", password: "123123", name: "Chris", location: "Athens, Greece")
+file = URI.open("https://c8.alamy.com/comp/2NT301Y/troy-brad-pitt-2NT301Y.jpg")
 user_1.photo.attach(io: file, filename: "chris.jpg", content_type: "image/jpg")
 user_1.save!
 user_2 = User.new(email: "dennis@myemail.com", password: "123123", name: "Dennis", location: "Denver, Colorado, USA")
@@ -72,17 +72,17 @@ bet_3.save!
 bet_4 = Bet.new(name: "Drink 2L sangria", location: "Madrid, Spain", stake: "€5000", end_time: "2023-12-31", status: 1, tag: tag_3, privacy: "public", user: user_4, opponent: user_7)
 bet_4.save!
 
-bet_5 = Bet.new(name: "Man City treble", location: "Manchester, England", stake: "Lunch at Honest Greens", end_time: "2023-06-10", status: 2, tag: tag_1, privacy: "public", user: user_6, opponent: user_1)
+bet_5 = Bet.new(name: "Man City treble", location: "Manchester, England", stake: "Lunch at Honest Greens", end_time: "2023-06-10", status: 2, tag: tag_1, privacy: "public", user: user_6, opponent: user_1, winner_id: user_6)
 bet_5.save!
 
 bet_6 = Bet.new(name: "Backgammon", location: "Faro, Portugal", stake: "Beach Cocktails", end_time: "2023-06-30", status: 0, tag: tag_5, privacy: "public", user: user_1, opponent: user_8)
 bet_6.save!
 
-bet_7 = Bet.new(name: "Denver NBA champ", location: "Denver, USA", stake: "$20", end_time: "2023-06-13", status: 2, tag: tag_1, privacy: "public", user: user_2, opponent: user_1)
+bet_7 = Bet.new(name: "Denver NBA champ", location: "Denver, USA", stake: "$20", end_time: "2023-06-13", status: 2, tag: tag_1, privacy: "public", user: user_2, opponent: user_1, winner_id: user_2)
 bet_7.save!
 
 bet_8 = Bet.new(name: "Sing Umbrella", location: "Porto, Portugal", stake: "Spa day", end_time: "2023-12-31", status: 0, tag: tag_6, privacy: "public", user: user_1, opponent: user_5)
 bet_8.save!
 
-bet_9 = Bet.new(name: "Build an app", location: "Costa da Caparica, Portugal", stake: "Our future", end_time: "2023-06-16", status: 1, tag: tag_3, privacy: "public", user: user_1, opponent: user_7)
+bet_9 = Bet.new(name: "Build an app", location: "Costa da Caparica, Portugal", stake: "Our future", end_time: "2023-06-17", status: 1, tag: tag_3, privacy: "public", user: user_1, opponent: user_7)
 bet_9.save!
