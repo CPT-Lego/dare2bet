@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_112221) do
     t.bigint "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "privacy"
+    t.string "privacy", default: "public"
     t.float "latitude"
     t.float "longitude"
     t.bigint "user_id", null: false
