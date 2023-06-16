@@ -18,7 +18,7 @@
           <div class="col-5 d-flex align-items-center justify-content-center gap-2">
             <div class="position-relative text-center<%= bet.opponent == bet.winner ? " bet-winner" : (" bet-loser" if bet.finished?) %>">
               <% if bet.opponent == bet.winner %>
-                <i class="fa-solid fa-crown position-absolute" style="color: #e9cd16;"></i>
+                <i class="fa-solid fa-crown position-absolute bet-winner-crown" style="color: #e9cd16;"></i>
               <% end %>
               <%= cl_image_tag(bet.opponent.photo.key, class: "avatar") if bet.opponent.photo.key.present? %>
               <p class="m-0"><strong><%= bet.opponent.name %></strong></p>
