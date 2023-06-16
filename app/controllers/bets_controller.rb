@@ -44,7 +44,7 @@ class BetsController < ApplicationController
   if params[:step_2]
     redirect_to bet_multiform_step_3_path(@bet)
   else
-    redirect_to bets_path
+    redirect_to bet_path(@bet)
   end
  end
 
